@@ -32,9 +32,9 @@
 ## Notes
 
 - The checklist validates the specification. Product outcomes require validation during the relevant delivery phases.
-- Navigation and discovery are covered by story 1 and SC-001, SC-002 and SC-004. Cinematic progression and fallbacks are covered by stories 3 and 4 and SC-003, SC-004 and SC-008. Direct email contact, mailto handoff and the copyable address are covered by story 2 and SC-005.
+- Navigation and discovery are covered by story 1 and SC-001, SC-002 and SC-004. Cinematic progression and fallbacks are covered by stories 3 and 4 and SC-003, SC-004 and SC-008. Protected email controls, failed clipboard handling and the mailto handoff are covered by story 2 and SC-005. Source exposure and bot mitigation are covered by NFR-010 and SC-011.
 - Credibility and publication requirements are covered by story 5 and SC-007. Content maintenance, search and engagement are covered by story 6, FR-016 through FR-020 and SC-008. Performance is covered by NFR-004 and SC-006.
 - Identity, publishable evidence, the verified official company email address, privacy policy and final media are owner or release dependencies. These do not prevent review of the specification.
-- The two technology-neutrality checks remain unchecked because the owner explicitly defines a static-only deployment, mailto contact, and technology preferences. Technology selection remains a planning decision.
+- The two technology-neutrality checks remain unchecked because the owner explicitly defines a static-only deployment, interaction-triggered email obfuscation, mailto contact, and technology preferences. Technology selection remains a planning decision.
 
 - Planning readiness is conditional on explicit project owner approval at the specification gate.
