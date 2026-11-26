@@ -2,9 +2,9 @@
 
 **Branch**: `main` (existing Git branch) | **Feature ID**: `001-cinematic-consulting-website` | **Date**: 2026-11-26 | **Spec**: [spec.md](spec.md)
 
-**Input**: Approved corrected static specification and [Constitution v2.0.0](../../.specify/memory/constitution.md) (amendment pending approval). The project owner invoked `$speckit-plan` on 2026-11-26 to advance the corrected scope. Source revision: `9ffb668dc1570444dbddd7d01883b36fbeef54c3`.
+**Input**: Corrected [specification](spec.md) at `9ffb668dc1570444dbddd7d01883b36fbeef54c3` and original design at `5a4358e3839c66c197944137d362dae965225655`. The owner invoked `$speckit-plan` to advance the corrected scope and later referred to both artifacts as approved. [Constitution v2.0.0](../../.specify/memory/constitution.md) and the design synchronization are in `2da1d989fe3b7739aeda26e506f380f17167c598`.
 
-**Status**: Design complete. Constitution v2.0.0 synchronization awaits explicit owner approval before task generation.
+**Status**: The `$speckit-tasks` invocation authorized task generation from the synchronized baseline. It did not record separate explicit approval of the v2.0.0 amendment or implementation checklist. The remediation revisions await owner approval before implementation.
 
 ## Summary
 
@@ -31,7 +31,7 @@ email controls, and programmatic motion. The public deployment consists of stati
 
 | Gate | Before research | After design |
 | --- | --- | --- |
-| I and XII. Traceability and approval | Pass. Owner initiated planning from the corrected spec. | Covered by the links below and the approval gate in this plan. Tasks and implementation are subsequent phases. |
+| I and XII. Traceability and approval | Pass for planning. The owner initiated planning from the corrected spec. | Prior approvals and task-generation authorization are recorded above. The amendment and revised artifacts still require explicit approval before implementation. |
 | II and III. Editorial design and animation architecture | Pass. The approved creative direction requires programmatic enhancement. | Design defines scene boundaries, inputs, variants, assets, cleanup and fallback. Final approved visuals and device evidence are release gates. |
 | IV and V. Performance and responsive design | Pass. Static delivery supports device-specific enhancement. | Budgets and the desktop, tablet and phone validation matrix are defined. |
 | VI and XI. Accessibility and progressive enhancement | Pass. Static HTML is the starting point. | Contact discovery, instructions and any mandatory contact disclosure are script-independent. Interactive address reconstruction requires scripts per FR-014. Motion scripts are separate and optional. |
@@ -39,8 +39,7 @@ email controls, and programmatic motion. The public deployment consists of stati
 | VIII. Credibility | Pass. Claims require evidence and permission. | Build validation separates publication metadata from public output. Unsupported optional content and its links are omitted. |
 | IX and X. Security, privacy and quality | Pass for protected static contact. | Verify mailto, reveal, copy fallback and plaintext exposure against the security and accessibility contracts. Contact sends no site requests or telemetry. Verify approved privacy practices and applicable UK disclosures before release. |
 
-No architectural exception is needed. The v2.0.0 amendment removes obsolete form rules and
-aligns the constitution with this static design. Approval and release evidence remain required.
+The v2.0.0 amendment aligns the constitution with the static design. The recorded task-phase authorization and the outstanding implementation gate are distinct. Release evidence remains required.
 
 ## Project Structure
 
@@ -86,8 +85,9 @@ Build tooling, tests, original asset files, and editorial evidence are outside p
 
 1. Establish content validation, approved static page rendering, asset manifests, and source audits.
 2. Add navigation, approved market profiles, and the protected contact surface independently of motion.
-3. Add scene orchestration for Hero, Global Market Connections, Expertise, Our Approach, Our Markets,
-   and Final Cinematic Scene. Keep text in normal DOM order. Pin only visual compositions.
+3. Add and mount scene orchestration for Hero, Global Market Connections, Expertise, Our Approach,
+   Our Markets and Final Cinematic Scene. Add the restrained Why Work With Us reveal. Keep text in
+   normal DOM order. Pin only visual compositions. Test the whole homepage order with scripts on and off.
 4. Measure and iterate on final visuals, device modes and fallbacks. Apply the
    [quickstart validation guide](quickstart.md) to the built and staged site.
 
@@ -104,6 +104,32 @@ network and CPU configuration with the result.
 | JavaScript | ≤ 30 KiB compressed initial JS before optional motion. ≤ 100 KiB compressed total first-party JS with motion. |
 | Scene transfer | ≤ 450 KiB per mobile scene and ≤ 800 KiB per desktop scene for its selected variants. No eager download of distant scene assets. |
 | Render and memory | On representative 60 Hz devices, aim at 60 fps. Gate a repeatable interaction trace at p95 frame interval ≤ 33 ms, with zero motion-attributed main-thread tasks over 50 ms during steady scroll. After 3 repeat passes and collection on a reproducible Chromium profile, retained JS heap growth ≤ 10 MiB versus settled baseline. Record image/GPU observations separately. |
+
+### Pre-release interaction responsiveness
+
+Use the same approved release candidate on a representative desktop or laptop and a physical
+mid-range Android phone with Chromium Event Timing. Record hardware, OS, browser, viewport,
+refresh rate, network, CPU settings, cache state and build revision. Check Safari/iOS and
+other supported engines separately for functionality and capture trace timing where supported.
+
+Run five cold and five warm journeys per device. Clear the cache for each cold run and reuse
+warmed static assets for warm runs. In each journey, use native taps, clicks and keys to open
+navigation, follow an anchor, select a country and activate reveal and copy. Include keyboard
+activation where supported and select a country while nearby motion assets are being initialized.
+Capture input-to-next-paint from Event Timing or the DevTools interaction trace, grouping events
+by interaction ID and using the longest duration for the interaction. Record a local journey
+INP using the browser's DevTools live metric or equivalent local-only collection. Measure the
+site response to clipboard activation and separately verify async copy feedback and external
+email app handoff. External app startup and scroll-only frames are not part of lab INP.
+
+For each device and cache state, the nearest-rank p75 across the five valid repetitions MUST
+be ≤ 200 ms for each action and for local journey INP. Retain the samples and trace, identify
+missing measurements, and rerun invalid samples with reasons recorded. Hold the gate if the
+required measurements cannot be obtained or exceed budget. Also retain lab LCP and CLS, and
+Lighthouse TBT as a separate diagnostic. Run production mobile and desktop p75 Core Web
+Vitals separately when sufficient field data exists. Local samples do not establish field INP.
+See [measuring lab interactions](https://web.dev/articles/manually-diagnose-slow-interactions-in-the-lab)
+and [field INP](https://web.dev/articles/inp). No visitor telemetry is needed for lab testing.
 
 Release decisions requiring owner input include the official email alias, legal entity, UK disclosure applicability, fields and placement,
 canonical origin, approved legal and brand content, final visuals and rights, and publication

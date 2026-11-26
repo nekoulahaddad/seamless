@@ -8,7 +8,11 @@ Removed obligations: website intake, server validation and rate limiting for inq
 provider delivery, database-backed storage, retries, and delivery status tracking.
 Synchronized: feature spec, implementation plan, content model, public page and contact contracts,
 and quickstart validation guide. Templates unchanged.
-Follow-up: Owner approval of this amendment and synchronization. Before release confirm the legal
+Approval record: v1.0.0 was ratified on 2026-11-26, as recorded when the owner requested
+specification against the approved constitution. v2.0.0 baseline: 2da1d989fe3b7739aeda26e506f380f17167c598.
+The owner authorized task generation against the synchronized artifacts by invoking $speckit-tasks.
+A separate explicit approval of the v2.0.0 amendment is not recorded. Confirm it before implementation.
+Follow-up: Before release confirm the legal
 entity, jurisdiction, mandatory disclosure fields and placement, and the official email alias.
 No placeholder TODOs. Remove this report before committing the approved amendment.
 -->

@@ -22,6 +22,24 @@ Activation sends no site request, records no data and adds no analytics. Test th
 OS handoff on approved representative devices. Client-side concealment does not stop a
 determined scraper.
 
+### Mandatory disclosure allowlist
+
+Record the owner-approved decision in the release review. Allowed states are **pending** (release
+blocked), **no plaintext disclosure required** (an empty allowlist), or **plaintext disclosure
+required** (an explicit per-occurrence allowlist). An unset decision is pending. For each
+approved location record the exact canonical route and output file, stable element selector
+for the visible disclosure node, permitted occurrence count, legal rationale, and approval
+reference. Wildcards and whole-file exceptions are invalid. The recipient is supplied via
+approved private build input. Keep it out of published validation logs.
+
+The exception applies only to visible mandatory disclosure text in approved HTML. The full
+address must be absent everywhere else, including metadata, structured data, scripts, source
+maps and configuration, even on the same route. Verify required text and discoverability with
+scripts disabled. Scan the served release candidate with CDN mitigation disabled, then scan
+the public delivery path with any approved mitigation enabled. Preserve every applicable
+disclosure. If legal placement is unresolved or cannot meet this contract, stop at the release
+gate and obtain the company's decision.
+
 ## Scene and device lifecycle
 
 | Mode | Behaviour |
@@ -29,6 +47,9 @@ determined scraper.
 | Full | Desktop/laptop and qualified tablet layouts use native scroll, section-bounded visual pins and horizontal scene progression. A timeline maps section position to normalized progress and syncs camera, layers and stage indicator. |
 | Vertical | Phones and other tablets preserve ordinary vertical reading and context-specific programmatic motion. A short visual pin needs a documented usability and performance benefit. Horizontal gestures are optional browser behaviour only. |
 | Static | Reduced-motion, unsupported capability, failed dependencies or blocked assets leave normal document flow and each essential text section, stage, action and alternative intact. Motion may be disabled by an accessible control, independent of the contact feature. |
+
+Why Work With Us uses a restrained scroll reveal only in eligible motion modes. Keep its
+copy readable in initial HTML and visible with reduced motion, unavailable assets, or scripts off.
 
 The hero, network map, Expertise, five Approach stages, Our Markets and closing scene each own
 their scene range, required visual variants and readiness. Initialize motion only when

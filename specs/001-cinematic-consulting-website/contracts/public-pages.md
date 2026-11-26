@@ -12,8 +12,11 @@ For each public HTML route verify status, content type, canonical, links and ess
 content with scripts disabled. Use semantic headings, skip navigation, a reserved layout for key
 visuals and a static alternative adjacent to any visual-only enhancement. Ship no runtime route
 handlers or app shell fallback. Invalid paths return a genuine 404. Assets and documents use
-HTTPS, with cache policies appropriate for hashed assets and updateable HTML. The deployment
-contains only the approved static artifact.
+HTTPS. Verify successful canonical route and asset responses, and a genuine 404 for an unknown
+page and missing asset. If an HTTP listener is public, it must redirect to HTTPS. Verify HTML
+and crawl metadata revalidate on reuse or are not stored. Fingerprinted assets may use long-lived
+immutable caching. Verify correct MIME types and that the HTML resolves to current asset hashes.
+The deployment contains only the approved static artifact.
 
 Verify applicable UK company, service-provider, contact and privacy disclosures in the initial
 HTML at their confirmed compliant locations. Required information must be easy to find without
