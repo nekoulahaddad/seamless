@@ -2,9 +2,9 @@
 
 **Branch**: `main` (existing Git branch) | **Feature ID**: `001-cinematic-consulting-website` | **Date**: 2026-11-26 | **Spec**: [spec.md](spec.md)
 
-**Input**: Approved corrected static specification. The project owner invoked `$speckit-plan` on 2026-11-26 to advance the corrected scope. Source revision: `9ffb668dc1570444dbddd7d01883b36fbeef54c3`.
+**Input**: Approved corrected static specification and [Constitution v2.0.0](../../.specify/memory/constitution.md) (amendment pending approval). The project owner invoked `$speckit-plan` on 2026-11-26 to advance the corrected scope. Source revision: `9ffb668dc1570444dbddd7d01883b36fbeef54c3`.
 
-**Status**: Design complete, awaiting explicit owner approval before task generation.
+**Status**: Design complete. Constitution v2.0.0 synchronization awaits explicit owner approval before task generation.
 
 ## Summary
 
@@ -35,12 +35,12 @@ email controls, and programmatic motion. The public deployment consists of stati
 | II and III. Editorial design and animation architecture | Pass. The approved creative direction requires programmatic enhancement. | Design defines scene boundaries, inputs, variants, assets, cleanup and fallback. Final approved visuals and device evidence are release gates. |
 | IV and V. Performance and responsive design | Pass. Static delivery supports device-specific enhancement. | Budgets and the desktop, tablet and phone validation matrix are defined. |
 | VI and XI. Accessibility and progressive enhancement | Pass. Static HTML is the starting point. | Contact discovery, instructions and any mandatory contact disclosure are script-independent. Interactive address reconstruction requires scripts per FR-014. Motion scripts are separate and optional. |
-| VII. Maintainability | Pass. No app runtime framework is needed for current scope. | Feature composition, strict typed boundaries, immutable data, separate CSS, and the 150-line file and 30-line function limits apply. React, Redux, RTK Query and NestJS rules have no applicable component or state in this design. |
+| VII. Maintainability | Pass. No app runtime framework is needed for current scope. | Feature composition, strict typed boundaries, immutable data, separate CSS, and the 150-line file and 30-line function limits apply. The design has no React components or shared application state. |
 | VIII. Credibility | Pass. Claims require evidence and permission. | Build validation separates publication metadata from public output. Unsupported optional content and its links are omitted. |
-| IX and X. Security, privacy and quality | Pass for static contact. | The constitution's submission validation, rate limiting, form feedback and intake recovery checks are inapplicable to the owner-approved mailto flow because the site accepts no submissions. Verify mailto, reveal, copy, fallback, site data practices and company-approved privacy disclosures. No amendment proposed in this phase. |
+| IX and X. Security, privacy and quality | Pass for protected static contact. | Verify mailto, reveal, copy fallback and plaintext exposure against the security and accessibility contracts. Contact sends no site requests or telemetry. Verify approved privacy practices and applicable UK disclosures before release. |
 
-No architectural exception is needed. The constitution still contains wording from the retired
-form scope, as recorded above. Release evidence remains required.
+No architectural exception is needed. The v2.0.0 amendment removes obsolete form rules and
+aligns the constitution with this static design. Approval and release evidence remain required.
 
 ## Project Structure
 
@@ -105,7 +105,7 @@ network and CPU configuration with the result.
 | Scene transfer | ≤ 450 KiB per mobile scene and ≤ 800 KiB per desktop scene for its selected variants. No eager download of distant scene assets. |
 | Render and memory | On representative 60 Hz devices, aim at 60 fps. Gate a repeatable interaction trace at p95 frame interval ≤ 33 ms, with zero motion-attributed main-thread tasks over 50 ms during steady scroll. After 3 repeat passes and collection on a reproducible Chromium profile, retained JS heap growth ≤ 10 MiB versus settled baseline. Record image/GPU observations separately. |
 
-Release decisions requiring owner input include the official email alias and legal disclosure,
+Release decisions requiring owner input include the official email alias, legal entity, UK disclosure applicability, fields and placement,
 canonical origin, approved legal and brand content, final visuals and rights, and publication
 authorization. These are release inputs. Use fictitious fixtures only in validation builds.
 Default to disabled analytics. Confirm any analytics and hosting decisions before enabling them.

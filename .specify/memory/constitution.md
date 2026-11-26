@@ -1,16 +1,16 @@
 <!--
 Sync Impact Report
-Version change: unversioned scaffold to 1.0.0
-Principles added: I. Spec-Driven Development, II. Design Excellence,
-III. Animation Architecture, IV. Performance First, V. Responsive Experience,
-VI. Accessibility, VII. Maintainability, VIII. Business Credibility,
-IX. Security and Privacy, X. Quality Assurance, XI. Progressive Enhancement,
-XII. Approval Gates
-Principles modified or removed: none
-Sections added: Engineering Constraints, Review and Release Gates
-Sections removed: none
-Ratification evidence: The project owner directed use of the approved constitution in the website specification brief on 2026-11-26.
-Remove this report before committing the ratified constitution.
+Version change: 1.0.0 to 2.0.0 (incompatible change to website architecture and contact rules).
+Modified principles: V. Responsive Experience; VI. Accessibility; IX. Security and Privacy;
+X. Quality Assurance; XI. Progressive Enhancement. No principle headings renamed or removed.
+Updated sections: Engineering Constraints; Review and Release Gates. No sections added or removed.
+Removed obligations: website intake, server validation and rate limiting for inquiries,
+provider delivery, database-backed storage, retries, and delivery status tracking.
+Synchronized: feature spec, implementation plan, content model, public page and contact contracts,
+and quickstart validation guide. Templates unchanged.
+Follow-up: Owner approval of this amendment and synchronization. Before release confirm the legal
+entity, jurisdiction, mandatory disclosure fields and placement, and the official email alias.
+No placeholder TODOs. Remove this report before committing the approved amendment.
 -->
 
 # Seamless Constitution
@@ -54,12 +54,13 @@ the measurement conditions.
 Desktop MUST provide the approved immersive storytelling experience. Mobile MUST have its own
 layout, pacing, media strategy, and motion treatment suited to touch, smaller screens, and
 limited device resources. Verify both experiences against explicit acceptance criteria, including
-content readability, navigation, and completion of the consultation flow.
+content readability, navigation, and the protected email controls across approved device modes.
 
 ### VI. Accessibility
 
 The website MUST target WCAG 2.2 AA. Reviews MUST cover semantic structure, keyboard access,
-visible focus, contrast, and the consultation form's labels, errors, and status messages. Honor
+visible focus, contrast, and the email controls' accessible names, status feedback, and selectable
+address fallback. Honor
 reduced-motion preferences and provide accessible static alternatives for information conveyed
 through motion. Verify with automated checks and manual keyboard, assistive technology, and
 reduced-motion checks on critical journeys.
@@ -82,27 +83,47 @@ evidence or permission to publish.
 
 ### IX. Security and Privacy
 
-Collect only information needed to respond to consultation requests. Validate submissions at
-the server boundary, apply rate limits, encrypt personal data in transit and at rest, and
-restrict access to authorized recipients. The plan MUST specify the data purpose, retention,
-and deletion controls. Credentials MUST remain outside source control, client bundles, and
-public configuration. Personal data and secrets MUST stay out of logs, analytics, and errors
-returned to users.
+Keep credentials outside source control and public artifacts. Use HTTPS, minimize data processing,
+and keep secrets and visitor personal data out of public output, logs, analytics, and error reports.
+The website MUST NOT collect, store, send, or track inquiries. The visitor's own email app handles
+direct correspondence. The Privacy Policy MUST reflect actual site practices and applicable
+handling of direct correspondence. Verify any applicable UK data protection and storage or access
+obligations before enabling optional analytics.
+
+Use a verified company email address. Provide Email Us via standard `mailto`, Reveal Email
+Address with selectable text, and Copy Email Address with accessible feedback and manual fallback.
+Reconstruct the address after explicit activation. Keep the full address out of initial HTML,
+public scripts, configuration, metadata and other downloadable artifacts except where an approved
+mandatory disclosure requires publication. Obfuscation reduces basic harvesting. It cannot stop
+bots that can reconstruct the address. Contact and bot protections MUST avoid tracking,
+fingerprinting and unnecessary CAPTCHA and preserve legitimate crawler access.
+
+Before release, verify and publish all applicable UK company, service-provider, contact and
+privacy disclosures. Confirm the legal entity, registration jurisdiction and exact required fields.
+Where disclosure applies, make required information easy to find and accessible in static HTML
+without interaction, scripts or motion. A mandatory disclosure takes precedence over obfuscation.
+Verify scope against [UK company website guidance](https://www.gov.uk/running-a-limited-company/signs-stationery-and-promotional-material),
+[regulation 6 of the Electronic Commerce Regulations](https://www.legislation.gov.uk/uksi/2002/2013/regulation/6),
+and applicable [ICO privacy](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-be-informed/)
+and [storage and access guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/).
 
 ### X. Quality Assurance
 
 Each change MUST define testable acceptance criteria before implementation. Release review MUST
 require passing relevant automated tests and TypeScript checks, visual verification of
 representative desktop and mobile views, accessibility checks, and recorded performance
-measurements. Verify critical journeys including navigation and consultation submission,
-validation errors, and failure recovery. Link the results to the approved acceptance criteria.
+measurements. Verify navigation, protected email activation, reveal, clipboard fallback, and
+mandatory disclosures. Audit public output for address exposure outside approved disclosure
+locations. Link the results to the approved acceptance criteria.
 
 ### XI. Progressive Enhancement
 
-Deliver essential company and service information, navigation, and access to consultation
-independently of the cinematic layer. Keep essential content in accessible markup and verify
-that it remains readable and navigable with animations disabled, animation scripts unavailable,
-or cinematic media failing. Supply a static equivalent when a scene carries essential meaning.
+Place essential company and service information, navigation, Contact instructions and required
+disclosures in the initial semantic HTML. Verify that visitors and legitimate crawlers can reach
+this content and its links without client scripts or cinematic assets. Preserve approved page
+metadata and crawl directives. Supply a static equivalent when a scene carries essential meaning.
+Protected email controls may require scripts. They MUST work independently of motion and the
+static instructions MUST explain their availability when scripts are disabled.
 
 ### XII. Approval Gates
 
@@ -114,6 +135,9 @@ the constitution, specification, plan, and tasks.
 
 ## Engineering Constraints
 
+- Production MUST serve static frontend files only. Build-time tools MAY generate HTML and assets.
+  The site MUST exclude contact forms, a backend, databases, serverless functions, email delivery
+  APIs and form providers, inquiry storage, retries, and delivery tracking.
 - Code files MUST contain at most 150 lines per file, with one entity per file. Functions MUST
   contain at most 30 lines and perform one action. Markdown is exempt from the file length cap.
 - Use immutable data, explicit async error handling, and domain errors. Use `unknown` for
@@ -122,12 +146,7 @@ the constitution, specification, plan, and tasks.
 - Frontend pages MUST compose features. React components MUST have named props types, with
   business rules outside components and styling in separate files. Effects MUST synchronize
   with external systems. Keep local UI state local. Use Redux Toolkit for shared client state
-  through selectors and RTK Query for server data and caching.
-- Any NestJS backend MUST validate inputs at its boundaries, including body, query, params,
-  and headers. Use the global ValidationPipe and exception filter, separate DTOs from domain
-  entities, authorize every protected action, limit sensitive endpoints, and isolate external
-  calls with timeouts and explicit error handling. Use allowlisted filters and sorting,
-  pagination for list endpoints, and parameterized queries.
+  through selectors when shared client state is required.
 - Technical plans MUST document significant architectural decisions and trade-offs, including
   alternatives considered and the effect on accessibility, performance, and maintenance.
   Dependencies and architecture MUST address an approved need.
@@ -140,7 +159,8 @@ the constitution, specification, plan, and tasks.
   scenarios, performance budgets, and the evidence needed to accept the work.
 - Before release, record test results, visual and accessibility evidence, and measured
   performance against budgets. Review the publication evidence for business claims and verify
-  consultation data protections. Correct failed criteria before release and obtain approval
+  protected contact behaviour, public artifact exposure, and applicable UK disclosures and privacy
+  requirements. Correct failed criteria before release and obtain approval
   for the completed phase.
 
 ## Governance
@@ -156,4 +176,4 @@ date, and record the amendment date. Use a major version for incompatible change
 a minor version for new principles or materially expanded guidance, and a patch version for
 clarifications and editorial corrections.
 
-**Version**: 1.0.0 | **Ratified**: 2026-11-26 | **Last Amended**: 2026-11-26
+**Version**: 2.0.0 | **Ratified**: 2026-11-26 | **Last Amended**: 2026-11-26

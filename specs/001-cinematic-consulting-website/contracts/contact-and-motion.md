@@ -5,7 +5,8 @@
 The initial HTML provides a Contact destination and instructions. Each protected control has an
 accessible name and can be activated by keyboard, pointer or touch. Leave the full address out
 of pre-interaction HTML, scripts, metadata, structured data, configuration, maps and downloaded
-artifacts, except a narrowly approved mandatory disclosure. Do not export private evidence or
+artifacts, except at narrowly scoped approved locations where publication is legally required. Make those
+disclosures easy to find in static HTML. Do not export private evidence or
 plain configuration in source maps.
 
 | Action or condition | Result |
@@ -14,7 +15,7 @@ plain configuration in source maps.
 | Reveal Email Address | Reveal one selectable, readable address and expose its availability to assistive technology while keeping focus predictable. |
 | Copy Email Address | Attempt clipboard write on activation. Announce success only after it resolves. If unavailable or denied, reveal selectable text and provide manual-copy instructions. |
 | No handler | Reveal and copy still function. Never claim a draft opened or a message was sent. |
-| Scripts missing | Contact remains reachable and contains readable instructions. The protected actions require scripts. Preserve approved mandatory disclosures. |
+| Scripts missing | Contact remains reachable and contains readable instructions. The protected actions require scripts. Make approved mandatory disclosures available without scripts or interaction. |
 | Motion, map or media fails | Contact controls remain functional independently of the cinematic code. |
 
 Activation sends no site request, records no data and adds no analytics. Test the actual
