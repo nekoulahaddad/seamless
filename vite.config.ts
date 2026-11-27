@@ -4,11 +4,12 @@ import { assemblePages } from './build/assemble-pages';
 import { renderDiscovery } from './build/render-discovery-files';
 import { outputFor } from './build/routes';
 import { loadSite } from './build/site-input';
+import { cinematicEnv } from './build/cinematic-config';
 
 export default defineConfig(({ mode }) => {
   const root = resolve('.generated');
   const isRelease = mode === 'release';
-  const pages = assemblePages(root,isRelease);
+  const pages = assemblePages(root,isRelease,cinematicEnv(mode));
   const { profile } = loadSite(isRelease);
   const discovery = renderDiscovery(pages,profile.origin,isRelease);
   return {

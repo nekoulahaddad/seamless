@@ -16,7 +16,7 @@ Open http://127.0.0.1:4181/. To run the review archive, extract it and serve its
 
 ## Contact and legal configuration
 
-The preview uses no demonstration address. Set `SEAMLESS_CONTACT_ALIAS` in `prototype/.env.local` or the build environment to the confirmed company address before building. The setting is loaded by the prototype build. The Email Us and Copy Email Address controls reconstruct it on activation. The address can be recovered by a determined scraper. With the alias missing, the controls are disabled without a persistent message.
+The preview uses no demonstration address. Set `SEAMLESS_CONTACT_ALIAS` in the repository-root `.env.local` or the build environment to the confirmed company address before building. The setting is loaded by the prototype build. The Email Us and Copy Email Address controls reconstruct it on activation. The address can be recovered by a determined scraper. With the alias missing, the controls are disabled without a persistent message.
 
 The build displays links to existing approved PDFs only. See [footer document setup](legal/README.md). The approved Privacy Policy and Terms & Conditions PDFs are outstanding publication inputs.
 
@@ -38,4 +38,4 @@ node prototype/review-contact-path.mjs
 node prototype/measure.mjs
 ```
 
-The checks cover the existing animations, reverse path, responsive stage placement, static regional image sizes, contact with a test-only alias, automatic reduced motion, and six reference widths. The [redesign evidence](../specs/001-cinematic-consulting-website/validation/static-connectivity-contact-about.md) records results and outstanding release inputs. Final approval remains required before integration.
+The checks cover the existing animations, reverse path, responsive stage placement, static regional image sizes, contact with a test-only alias, automatic reduced motion, and six reference widths. The [redesign evidence](../specs/001-cinematic-consulting-website/validation/static-connectivity-contact-about.md) records results and outstanding release inputs. The owner approved integration on 27 November 2026. The standalone preview now renders the same homepage and motion source as the application.

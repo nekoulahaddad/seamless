@@ -163,7 +163,7 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 - [X] T051 Extend the continuous story and responsive/static equivalents through Global Market Connections, the five Approach stages, Markets, Why Work With Us, Regional and Strategic Network, and the closing CTA (PA-03).
 - [X] T052 Preserve the existing scroll-driven Hero, capsule scan, and branches. Remove the experimental Three.js runtime from the prototype and validate the programmatic SVG capsule with the same scroll pose (PA-02, PA-04).
 - [X] T053 Verify the complete prototype on desktop, phone emulation, CSS reduced motion, and with scripts disabled. Save screenshots, browser results, and local performance evidence (PA-03?05, [prototype evidence](validation/cinematic-prototype.md)).
-- [ ] T054 Hold integration into the main website until the owner explicitly approves the complete prototype. Production release checks T044?T049 retain their existing requirements.
+- [X] T054 Integrate the complete cinematic prototype into the main application after explicit owner approval on 27 November 2026. The application and standalone preview share one source. Production release checks T044?T049 remain open.
 
 T050 follows first-chapter visual approval. T051 and T052 must precede T053. T054 follows T053 and explicit owner approval.
 
@@ -209,7 +209,7 @@ Serialize any tasks that touch the same homepage, navigation, or page assembly f
 - [X] T058 Implement the closing Contact, two protected actions and configurable PDF footer (PA-08?09).
 - [X] T059 Verify six viewport widths, interactions, accessibility and performance, and package new visual evidence (PA-10).
 
-T055 precedes T056?T058. T059 follows all three. T054 remains subject to final integration approval.
+T055 precedes T056?T058. T059 follows all three. T054 was completed after owner approval.
 
 ## Static regional artwork and Contact controls
 
@@ -219,4 +219,4 @@ T055 precedes T056?T058. T059 follows all three. T054 remains subject to final i
 
 - [X] T063 Correct the mobile About shot layout and verify full-width art, source proportions, text padding, scan alignment and no overflow at 360, 390 and 430 px (PA-11).
 
-T062 follows T060, T061 and T063. See the [static regional, contact and mobile About validation](validation/static-connectivity-contact-about.md). T054 still requires final integration approval.
+T062 follows T060, T061 and T063. See the [static regional, contact and mobile About validation](validation/static-connectivity-contact-about.md). T054 was completed after owner approval.

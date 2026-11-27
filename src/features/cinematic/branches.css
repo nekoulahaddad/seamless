@@ -17,7 +17,7 @@
 [data-motion="on"] .services .is-active{border-color:#73adbc;background:linear-gradient(90deg,#16455665,transparent)}
 @media(max-width:900px){
  .expertise-inner{grid-template-columns:1fr;gap:.2rem}
- .branch-art{height:10rem}
+ .branch-art{display:none}
  .expertise-shot{padding-block:2.2rem;min-block-size:0}
  .services li{padding-block:.65rem}
  [data-motion="on"] .expertise{min-block-size:auto}

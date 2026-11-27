@@ -1,4 +1,4 @@
-import { copyAddress } from '../../src/features/contact/copy-address';
+import { copyAddress } from '../contact/copy-address';
 
 export function writeContactClipboard(address:string):Promise<boolean> {
   if(navigator.clipboard) return copyAddress(address);

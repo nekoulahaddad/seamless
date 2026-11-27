@@ -15,6 +15,8 @@ export async function reviewResponsive(browser,{ready,seek,snapshot}) {
   await phone.getByRole('link',{name:'Expertise',exact:true}).click();
   assert.equal(new URL(phone.url()).hash,'#expertise');
   assert.equal(await phone.locator('[data-service]').count(),6);
+  assert.equal(await phone.locator('.branch-art').isVisible(),false);
+  assert.equal(await phone.locator('.branch-wire').count(),0);
   await verifyLater(phone,snapshot,'08-phone');
   await verifyContent(phone);
   await phone.close();

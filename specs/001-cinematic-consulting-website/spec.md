@@ -272,3 +272,7 @@ The owner authorized this redesign against the four supplied visual references. 
 
 - **PA-11**. At 360, 390 and 430 CSS pixels, About fills the viewport width and the photograph reaches both edges without distortion or horizontal overflow. Keep text padding, a compact text-to-image gap, and the existing mobile scroll path and capsule animation. Preserve the desktop composition.
 - **PA-12**. The compact header opens a full-screen mobile navigation with ordered links, a separate consultation CTA and a close control. Verify keyboard focus returns when dismissing it, internal links close it, and short viewports can scroll the menu. The Contact path stays in the side gutter until it is below the heading, copy, controls and status.
+
+## Integration approval
+
+On 27 November 2026 the owner approved the complete prototype and authorized integration into the main application. The approved homepage is now the application entry. Privacy and Terms remain reachable on their existing routes. This approval covers integration and visual direction. Indexing, deployment, and legal publication still follow the release gate.

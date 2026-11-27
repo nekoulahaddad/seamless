@@ -23,6 +23,7 @@
 .contact-action:not(:disabled):not([aria-disabled="true"]):hover .contact-icon{box-shadow:0 0 1.15rem #edb65c87;background:#86663144}
 .contact-action:is(:disabled,[aria-disabled="true"]){cursor:default}
 .contact-copy-selection{position:fixed;inset:0 auto auto 0;width:1px;height:1px;opacity:0;pointer-events:none}
+.contact-copy .disclosures{margin-top:1rem;color:var(--muted);font-size:.875rem;overflow-wrap:anywhere}
 .contact-status{min-height:1.5em;font-size:.83rem;margin:.8rem 0 0;color:var(--muted)}
 .cinematic-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem 2rem;padding:1.45rem 0;margin:0 var(--gutter);border-top:1px solid #78929c66;color:#c0cdd5}
 .footer-brand{display:flex;gap:.6rem;align-items:center;text-decoration:none;color:#f0f5f8;text-transform:uppercase;font-size:.76rem;letter-spacing:.12em;max-width:15rem}

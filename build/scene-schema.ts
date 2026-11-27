@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { BuildError } from './build-error';
 import { sceneIds } from '../content/scenes/asset-manifest';
 
-const still = z.union([z.enum(['inline:map','inline:expertise']),z.string().regex(/^\/scenes\/[\w-]+\.(?:webp|avif|jpe?g|png|svg)$/)]);
+const still = z.union([z.enum(['inline:timeline','inline:expertise']),z.string().regex(/^\/art\/[\w-]+\.(?:webp|avif|jpe?g|png|svg)$/)]);
 export const sceneSchema = z.object({
   id:z.enum(sceneIds), order:z.number().int().nonnegative(), section:z.string().min(1),
   goal:z.string().min(1), treatment:z.string().min(1), cue:z.string().min(1),

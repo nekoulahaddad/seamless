@@ -79,7 +79,9 @@ function geometryBeats(main:HTMLElement,bounds:Chapters,width:number,compact:boo
   const left=width*(compact ? .028 : .068);
   const anchor=heroAnchor(main,compact);
   const about=offsetInShot(main.querySelector('[data-anchor="about"]'));
-  const services=offsetInShot(main.querySelector('.branch-core'));
+  const expertiseAnchor=compact ? '[data-anchor="expertise"]' : '.branch-core';
+  const services=offsetInShot(main.querySelector(expertiseAnchor));
+  const expertiseX=compact ? left : services.x||left;
   const ignition=bounds.hero.top+bounds.hero.travel*IGNITION;
   const originX=anchor?.x??width*(compact ? .48 : .735);
   const originY=anchor?.y??innerHeight*.44;
@@ -87,7 +89,7 @@ function geometryBeats(main:HTMLElement,bounds:Chapters,width:number,compact:boo
   return [
     {point:{x:originX,y:ignition-bounds.mainTop+originY},scroll:ignition},
     {point:{x:left,y:bounds.about.top-bounds.mainTop+about.y},scroll:bounds.about.top},
-    {point:{x:services.x||left,y:bounds.expertise.top-bounds.mainTop+services.y},scroll:bounds.expertise.top},
+    {point:{x:expertiseX,y:bounds.expertise.top-bounds.mainTop+services.y},scroll:bounds.expertise.top},
     ...later,
     {point:{x:width*(compact ? .54 : .82),y:main.offsetHeight-37},scroll:bounds.max,finish:true},
   ].sort((a,b)=>a.point.y-b.point.y);

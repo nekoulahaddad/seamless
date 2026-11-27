@@ -1,6 +1,6 @@
-import { marketCatalog } from '../../content/markets/catalog';
-import { networkLocations } from '../../content/network/locations';
-import { escapeHtml as esc } from '../../src/shared/render/escape-html';
+import { marketCatalog } from '../../../../content/markets/catalog';
+import { networkLocations } from '../../../../content/network/locations';
+import { escapeHtml as esc } from '../../../shared/render/escape-html';
 
 function regionalPicture():string {
   return `<picture class="region-art">

@@ -1,4 +1,4 @@
-import { escapeHtml as esc } from '../../src/shared/render/escape-html';
+import { escapeHtml as esc } from '../../../shared/render/escape-html';
 
 const differentiators=[
   'Pharmaceutical specialization',

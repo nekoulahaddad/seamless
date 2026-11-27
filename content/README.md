@@ -1,6 +1,6 @@
 # Content and release inputs
 
-The default local build uses a clearly labelled fixture and a non-routable email address.
+The application uses the approved cinematic sources and keeps local builds non-indexable. Set `SEAMLESS_CONTACT_ALIAS` in the repository-root `.env.local` to enable contact in local builds. Release contact reads the verified alias in the private release configuration.
 Record approval and source evidence before publishing claims. Withdrawn entries must disappear
 with dependent navigation links. Do not add real client or facility claims to demo artwork.
 
@@ -14,3 +14,5 @@ publication approval before setting either approval property.
 
 Analytics is disabled. Never add contact events, fingerprints, tracking pixels or hooks to
 the email controls. Any anonymous event consumer requires independent approval.
+
+Browser branding assets live in `assets/brand/` and `assets/favicon.ico`. The card dimensions and alt text live in `content/seo.ts`. Set `profile.origin` to the confirmed public HTTPS origin in private release inputs. The generated `/brand/icon-512.png` can be used for `profile.logo` once approved.

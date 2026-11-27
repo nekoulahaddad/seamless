@@ -108,7 +108,7 @@ def compose(camera,terrain,night,outlines,locations,font):
 
 
 def build(source, output, font):
-    projected = json.loads((Path(__file__).parents[1]/'chapters/region-geometry.json').read_text())
+    projected = json.loads((Path(__file__).parents[2]/'content/markets/region-geometry.json').read_text())
     outlines, locations = read_geography(source,projected)
     terrain,night = (texture(source/file) for file in ('terrain.jpg','night.jpg'))
     for camera,name,quality in [(DESKTOP,'regional-wide',84),(MOBILE,'regional-compact',86)]:

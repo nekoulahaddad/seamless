@@ -1,4 +1,4 @@
-import { escapeHtml as esc } from '../../src/shared/render/escape-html';
+import { escapeHtml as esc } from '../../../shared/render/escape-html';
 import { picture } from './art';
 
 const mail='M3 5h18v14H3zM3 6l9 7 9-7';
@@ -10,7 +10,7 @@ function actionContent(label:string,path:string,confirmation=''):string {
     <span>${label}</span>`;
 }
 
-export function renderContact(alias:string|undefined):string {
+export function renderContact(alias:string|undefined,disclosure:string):string {
   return `<section id="contact" class="chapter contact-chapter" aria-labelledby="contact-title">
     ${picture('contact')}
     <div class="contact-copy">
@@ -24,6 +24,6 @@ export function renderContact(alias:string|undefined):string {
           ${actionContent('Copy Email Address',copy,check)}</button>
       </div>
       <p class="contact-status" role="status"></p>
-      <span class="sr-only" data-copy-announcement role="status"></span>
+      <span class="sr-only" data-copy-announcement role="status"></span>${disclosure}
     </div></section>`;
 }

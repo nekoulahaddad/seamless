@@ -1,5 +1,5 @@
-import { stages } from '../../content/scenes/stages';
-import { escapeHtml as esc } from '../../src/shared/render/escape-html';
+import { stages } from '../../../../content/scenes/stages';
+import { escapeHtml as esc } from '../../../shared/render/escape-html';
 
 export function renderApproach():string {
   const steps=stages.map(({id,name,copy},index)=>`<li id="stage-${id}" data-stage>

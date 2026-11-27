@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- page-head -->
+<link rel="preload" href="/art/hero.webp" as="image" media="(min-width: 901px)">
+<link rel="preload" href="/art/hero-mobile.webp" as="image" media="(max-width: 900px)">
+<script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.dataset.motion='on';</script>
+<script type="module" src="<!-- page-entry -->"></script>
+</head>
+<body>
+<a href="#journey" class="skip-link">Skip to content</a>
+<header class="site-header">
+ <!-- header-brand -->
+ <nav aria-label="Primary"><!-- prototype-nav --></nav>
+ <button class="mobile-menu-trigger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+ <details class="mobile-menu"><summary>Menu</summary><nav aria-label="Primary"><!-- mobile-nav --></nav></details>
+ <a class="button outline header-contact" href="#contact">Book a Consultation</a>
+</header>
+<dialog id="mobile-navigation" class="mobile-panel" aria-label="Site navigation">
+ <div class="mobile-panel-inner">
+  <div class="mobile-panel-header">
+   <!-- menu-brand -->
+   <button class="mobile-menu-close" type="button" aria-label="Close menu" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button>
+  </div>
+  <svg class="mobile-panel-light mobile-panel-light-top" viewBox="0 0 400 105" preserveAspectRatio="none" aria-hidden="true">
+   <defs><linearGradient id="menu-sky"><stop offset=".28" stop-color="#59cbe6" stop-opacity="0"/><stop offset=".64" stop-color="#a0f2ff"/><stop offset="1" stop-color="#008aaa" stop-opacity=".08"/></linearGradient><filter id="menu-sky-glow"><feGaussianBlur stdDeviation="3.5"/></filter></defs>
+   <path d="M0 29Q225-30 400 95" fill="none" stroke="url(#menu-sky)" stroke-width="6" opacity=".75" filter="url(#menu-sky-glow)"/>
+   <path d="M0 29Q225-30 400 95" fill="none" stroke="url(#menu-sky)" stroke-width="1"/>
+  </svg>
+  <div class="mobile-panel-navigation"></div>
+  <svg class="mobile-panel-light mobile-panel-light-bottom" viewBox="0 0 400 134" preserveAspectRatio="none" aria-hidden="true">
+   <defs><linearGradient id="menu-amber"><stop stop-color="#aa6e31" stop-opacity=".17"/><stop offset=".4" stop-color="#ffeab6"/><stop offset=".85" stop-color="#ffca72" stop-opacity="0"/></linearGradient><linearGradient id="menu-cyan"><stop offset=".3" stop-color="#56c8dc" stop-opacity="0"/><stop offset=".67" stop-color="#9bfaff"/><stop offset="1" stop-color="#1392b4" stop-opacity=".45"/></linearGradient><filter id="menu-low-glow"><feGaussianBlur stdDeviation="5"/></filter></defs>
+   <g fill="none" stroke-width="7" opacity=".85" filter="url(#menu-low-glow)"><path d="M-8 110Q177 14 407 93" stroke="url(#menu-amber)"/><path d="M90 102Q243 28 400 5" stroke="url(#menu-cyan)"/></g>
+   <g fill="none" stroke-width="1.1"><path d="M-8 110Q177 14 407 93" stroke="url(#menu-amber)"/><path d="M90 102Q243 28 400 5" stroke="url(#menu-cyan)"/></g>
+  </svg>
+ </div>
+</dialog>
+<main id="journey">
+ <svg class="journey-path" aria-hidden="true">
+  <defs><linearGradient id="journey-finish" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#a4f5ff"/><stop offset=".58" stop-color="#ffe2ab"/><stop offset="1" stop-color="#ffd28a"/>
+  </linearGradient></defs>
+  <path class="path-bed" /><path class="path-halo" /><path class="path-light" />
+  <g class="path-nodes"></g><circle class="path-flare" r="5" />
+ </svg>
+ <section id="hero" class="chapter hero" aria-labelledby="hero-title">
+  <div class="shot hero-shot">
+   <div class="hero-art" aria-hidden="true">
+    <div class="hero-camera">
+     <picture class="hero-poster"><source media="(max-width: 900px)" srcset="/art/hero-mobile.webp"><img src="/art/hero.webp" width="1672" height="941" alt="" fetchpriority="high"></picture>
+     <canvas class="vial-cap" width="202" height="246"></canvas>
+    </div>
+    <div class="vial-light"></div>
+   </div>
+   <div class="story-copy hero-copy">
+    <p class="eyebrow">From innovation to market</p>
+    <h1 id="hero-title"><!-- approved-headline --></h1>
+    <p class="description"><!-- approved-support --></p>
+    <div class="actions"><a class="button primary" href="#expertise">Our Services</a><a class="button outline" href="#about">About Us</a></div>
+   </div>
+  </div>
+ </section>
+ <section id="about" class="chapter about" aria-labelledby="about-title">
+  <div class="shot about-shot">
+   <div class="expert-art" aria-hidden="true">
+    <picture><source media="(max-width: 900px)" srcset="/art/expert-mobile.webp"><img class="expert-still" src="/art/expert.webp" width="1672" height="941" alt="" loading="lazy" decoding="async"></picture>
+    <div class="capsule-mount" data-model="capsule"></div>
+    <div class="capsule-fallback"></div>
+    <div class="scan-display"><i></i><i></i><i></i><i></i></div>
+    <div class="scan-beam"></div>
+   </div>
+   <div class="story-copy about-copy">
+    <p class="eyebrow">Pharmaceutical market entry</p>
+    <h2 id="about-title">About Us</h2>
+    <p class="description">We help international pharmaceutical manufacturers select markets, navigate regulatory pathways, and find regional business partners.</p>
+    <a class="text-link" href="#expertise">Explore our expertise</a>
+   </div>
+   <span class="chapter-anchor" data-anchor="about" aria-hidden="true"></span>
+  </div>
+ </section>
+ <section id="expertise" class="chapter expertise" aria-labelledby="expertise-title">
+  <div class="shot expertise-shot">
+   <div class="expertise-inner">
+    <div class="branch-art" aria-hidden="true"><span class="branch-core"></span><svg class="branch-map"></svg></div>
+    <div class="services-copy">
+     <p class="eyebrow">From assessment to entry</p>
+     <h2 id="expertise-title">Our Expertise</h2>
+     <ul class="services"><!-- services --></ul>
+    </div>
+   </div>
+   <span class="chapter-anchor" data-anchor="expertise" aria-hidden="true"></span>
+  </div>
+ </section>
+ <!-- remaining-chapters -->
+</main>
+<!-- cinematic-footer -->
+</body>
+</html>

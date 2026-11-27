@@ -1,18 +1,20 @@
 import { expect, test } from '@playwright/test';
-test('desktop timeline tracks ordered progress forward and backward',async({page})=>{
+
+test('desktop timeline illuminates the stages in both directions',async({page})=>{
   await page.setViewportSize({width:1440,height:950});
   await page.goto('/');
-  await expect(page.locator('html')).toHaveAttribute('data-motion','full');
-  const goTo=async(id:string)=>{
-    await page.locator(`#${id}`).evaluate((node)=>window.scrollTo({
-      top:window.scrollY+node.getBoundingClientRect().top-150,behavior:'instant',
-    }));
-    await expect(page.locator('#approach')).toHaveAttribute('data-active-stage',id);
+  await expect(page.locator('html')).toHaveAttribute('data-motion','on');
+  const seek=async(fraction:number)=>{
+    await page.locator('#approach').evaluate((node,position)=>{
+      const top=window.scrollY+node.getBoundingClientRect().top;
+      window.scrollTo(0,top-window.innerHeight*position);
+    },fraction);
   };
-  await goTo('prepare');
-  await goTo('facilitate');
-  await goTo('evaluate');
-  await page.getByRole('button',{name:'Pause Motion'}).click();
-  await expect(page.locator('html')).toHaveAttribute('data-motion','static');
-  await expect(page.locator('.journey-stages li')).toHaveCount(5);
+  await seek(.02);
+  await expect(page.locator('#stage-facilitate')).toHaveClass(/is-reached/);
+  await seek(.52);
+  await expect(page.locator('#stage-facilitate')).not.toHaveClass(/is-reached/);
+  await expect(page.locator('#stage-understand')).toHaveClass(/is-reached/);
+  await expect(page.getByRole('button',{name:/pause motion|stop motion/i})).toHaveCount(0);
+  await expect(page.locator('.stage-list li')).toHaveCount(5);
 });

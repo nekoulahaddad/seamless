@@ -1,4 +1,5 @@
 import { en } from './locales/en';
+import type { SiteProfile } from '../build/site-profile-schema';
 
 export const fixtureProfile = {
   name: 'Seamless Market Entry Advisory',
@@ -12,4 +13,4 @@ export const fixtureProfile = {
   terms: 'This is a local demonstration of the website. It is not an offer of services, a statement of regulatory approval, or a representation of an actual facility. Production terms are pending company approval.',
   contactRef: 'official-alias',
   isPublicationApproved: false,
-};
+} satisfies SiteProfile;

@@ -1,5 +1,5 @@
-import { en } from '../../content/locales/en';
-import { escapeHtml as esc } from '../../src/shared/render/escape-html';
+import { en } from '../../../../content/locales/en';
+import { escapeHtml as esc } from '../../../shared/render/escape-html';
 
 const icons={
   about:'M2 8l10-6 10 6-10 6zM2 12l10 6 10-6M2 16l10 6 10-6',
