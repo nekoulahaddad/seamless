@@ -27,6 +27,8 @@ test('contact is independent of motion and emits the protected mailto destinatio
   const alias=await openContact(page);
   expect((await (await request.get('/')).text()).includes(alias)).toBe(false);
   const email=page.getByRole('link',{name:'Email Us'});
+  await expect(email.locator('svg')).toHaveCSS('fill','none');
+  await expect(email.locator('svg')).toHaveCSS('stroke','rgb(255, 212, 138)');
   await expect(email).not.toHaveAttribute('href',/mailto:/);
   await email.press('Enter');
   expect((await email.getAttribute('href'))==='mailto:'+encodeURIComponent(alias).replace('%40','@')).toBe(true);
@@ -43,6 +45,8 @@ test('copy confirms success with a check and reports denied clipboard access',as
   });
   const alias=await openContact(page);
   const copy=page.getByRole('button',{name:'Copy Email Address'});
+  await expect(copy.locator('svg').first()).toHaveCSS('fill','none');
+  await expect(copy.locator('svg').first()).toHaveCSS('stroke','rgb(255, 212, 138)');
   await copy.click();
   await expect(copy.locator('.contact-check')).toBeVisible();
   expect((await page.locator('html').getAttribute('data-test-clipboard'))===alias).toBe(true);

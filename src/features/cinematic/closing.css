@@ -7,7 +7,7 @@
 .contact-actions{display:flex;gap:clamp(1.25rem,4vw,3.6rem);flex-wrap:wrap}
 .contact-action{display:flex;align-items:center;gap:.9rem;background:transparent;border:0;padding:0;color:var(--copy);cursor:pointer;font-size:1rem;text-decoration:none}
 .contact-icon{display:grid;place-items:center;border:1px solid #f6ce88;border-radius:50%;width:clamp(2.8rem,5vw,4rem);aspect-ratio:1;color:#ffd48a;background:#111f2859;box-shadow:0 0 .9rem #e4ae5038}
-.contact-icon svg{grid-area:1/1}
+.contact-icon svg{grid-area:1/1;width:48%;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 .contact-check{visibility:hidden}
 [data-copied] .contact-icon svg:not(.contact-check){visibility:hidden}
 [data-copied] .contact-check{visibility:visible;color:#ffe4ad}
