@@ -86,7 +86,9 @@ p{line-height:1.57}
  .eyebrow{margin-block-end:.55rem}
  .chapter-anchor{left:2.7%}
  [data-motion="on"] .hero{min-block-size:179svh}
- [data-motion="on"] .about{min-block-size:158svh}
- [data-motion="on"] .hero-shot,[data-motion="on"] .about-shot{min-block-size:100svh}
+ [data-motion="on"] .about{min-block-size:0}
+ [data-motion="on"] .about::after{content:"";display:block;block-size:clamp(9rem,34svh,19rem)}
+ [data-motion="on"] .hero-shot{min-block-size:100svh}
+ [data-motion="on"] .about-shot{min-block-size:0}
 }
 @media(prefers-reduced-motion:reduce){*,*::after,*::before{scroll-behavior:auto!important;transition:none!important}}

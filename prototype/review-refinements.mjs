@@ -43,6 +43,7 @@ async function checkAbout(page,width){
     return Math.hypot(x-center.e,y-center.f);
   });
   assert.ok(error<1,`Restored capsule at ${width}px is off by ${error}px`);
+  if(width<=900) await checkMobileTransition(page,width);
   return anchor.error;
 }
 
@@ -68,6 +69,19 @@ async function seekAbout(page,progress){
     scrollTo(0,top+travel*value);
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
   },progress);
+}
+
+async function checkMobileTransition(page,width){
+  await seekAbout(page,1);
+  const gap=await page.evaluate(()=>{
+    const photo=document.querySelector('.expert-art').getBoundingClientRect();
+    const title=document.querySelector('#expertise .eyebrow').getBoundingClientRect();
+    return title.top-photo.bottom;
+  });
+  assert.ok(gap>=0&&gap<=36,`Mobile transition has a ${gap}px gap at ${width}px`);
+  if(width===390){
+    await page.screenshot({path:`${output}/about-to-expertise-390.png`,style:'.site-header{visibility:hidden}'});
+  }
 }
 
 async function checkAdvantages(page,width){
