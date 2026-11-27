@@ -1,0 +1,4 @@
+.credibility{background:#11283d}
+.principles{list-style:none;margin:0;padding:0}
+.principles li{border-block-end:1px solid var(--line);padding:1rem 0;color:#e0ecf5;font-size:1.13rem}
+.network{background:#0d1b2b}

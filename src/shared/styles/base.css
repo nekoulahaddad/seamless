@@ -1,0 +1,36 @@
+@import "./direction.css";
+:root {
+  color-scheme: dark; --navy:#080f1c; --blue:#142b42; --gold:#e3bd83; --teal:#70d4ce;
+  --ink:#f4f6f8; --muted:#b8c8d5; --line:#3b4b5c; --gutter:clamp(1.2rem,5vw,5rem);
+  font-family:Inter,"Segoe UI",system-ui,sans-serif; color:var(--ink); background:var(--navy);
+}
+*{box-sizing:border-box}
+body{margin:0}
+img{display:block;max-inline-size:100%;block-size:auto}
+a{color:inherit;text-underline-offset:.25em}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
+[hidden]{display:none!important}
+h1,h2,h3{margin:0;line-height:1.04;text-wrap:balance;font-family:Manrope,Inter,"Segoe UI",system-ui,sans-serif}
+h1{font-size:clamp(2.65rem,7.2vw,7.3rem);letter-spacing:-.072em}
+h2{font-size:clamp(2.2rem,5.45vw,5rem);letter-spacing:-.061em}
+h3{font-size:clamp(1.25rem,2.3vw,2.05rem);letter-spacing:-.035em}
+p{line-height:1.65;margin:.8em 0}
+.section{padding:clamp(4.4rem,10vw,10rem) var(--gutter)}
+.inset{max-inline-size:86rem;margin-inline:auto}
+.kicker{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.lead{font-size:clamp(1.06rem,1.8vw,1.4rem);max-inline-size:42ch;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.cta{display:inline-flex;min-block-size:3rem;align-items:center;border:1px solid var(--line);padding:.65rem 1rem;color:var(--ink);border-radius:.3rem;background:#12253b;text-decoration:none;cursor:pointer}
+.cta.primary{background:var(--gold);color:#101721;border-color:var(--gold);font-weight:700}
+.cta:hover{border-color:var(--teal)}
+.skip{position:fixed;z-index:5;inset-block-start:1rem;inset-inline-start:1rem;translate:0 -200%}
+.skip:focus{translate:none}
+.preview-banner{background:#21384b;color:var(--ink);padding:.55rem var(--gutter);margin:0;font-size:.82rem}
+.footer{padding:3rem var(--gutter);border-block-start:1px solid var(--line)}
+.footer .inset{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+.footer nav{display:flex;flex-wrap:wrap;gap:.9rem}
+.legal{max-inline-size:70ch;padding:4rem var(--gutter);margin:auto}
+.legal h1{font-size:clamp(2.6rem,6vw,5rem)}
+.legal p{overflow-wrap:anywhere}
+::selection{background:var(--teal);color:var(--navy)}

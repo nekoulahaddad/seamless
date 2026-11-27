@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.env*
+!.env.example
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+playwright-report/
+test-results/
+content/private/
+.generated/

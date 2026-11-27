@@ -1,0 +1,6 @@
+.contact{background:#183251;border-block-start:1px solid var(--line)}
+.contact .lead{color:var(--ink)}
+.address{font-size:1.15rem;overflow-wrap:anywhere;color:var(--teal);user-select:all}
+.preview-note{font-size:.9rem;color:var(--gold)}
+#contact-status{min-block-size:1.5rem}
+.disclosures{background:#12243a;padding-block:1.25rem;overflow-wrap:anywhere}

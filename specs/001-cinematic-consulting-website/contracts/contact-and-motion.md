@@ -46,7 +46,7 @@ gate and obtain the company's decision.
 | --- | --- |
 | Full | Desktop/laptop and qualified tablet layouts use native scroll, section-bounded visual pins and horizontal scene progression. A timeline maps section position to normalized progress and syncs camera, layers and stage indicator. |
 | Vertical | Phones and other tablets preserve ordinary vertical reading and context-specific programmatic motion. A short visual pin needs a documented usability and performance benefit. Horizontal gestures are optional browser behaviour only. |
-| Static | Reduced-motion, unsupported capability, failed dependencies or blocked assets leave normal document flow and each essential text section, stage, action and alternative intact. Motion may be disabled by an accessible control, independent of the contact feature. |
+| Static | Reduced-motion, unsupported capability, failed dependencies or blocked assets leave normal document flow and each essential text section, stage, action and alternative intact. The prototype follows the system?s reduced-motion preference without a manual motion control. Cinematic layers hold their state when scroll position is stationary. |
 
 Why Work With Us uses a restrained scroll reveal only in eligible motion modes. Keep its
 copy readable in initial HTML and visible with reduced motion, unavailable assets, or scripts off.

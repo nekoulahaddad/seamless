@@ -4,9 +4,9 @@
 
 **Created**: 2026-11-26
 
-**Status**: Corrected product scope approved at `9ffb668dc1570444dbddd7d01883b36fbeef54c3`. The owner advanced it via `$speckit-plan` and later described the specification and plan as approved. The synchronization in `2da1d989fe3b7739aeda26e506f380f17167c598` was used for authorized task generation. This remediation revision awaits review.
+**Status**: Remediated scope explicitly approved on 2026-11-27 against baseline a6580e47fca4972d107c442e245f59ef5b8d87bf. The owner subsequently supplied the centered vial, luminous dome, reflection and midnight-blue reference as the primary visual direction. Launch approval remains separate.
 
-**Input**: Owner brief, “Immersive Pharmaceutical & International Business Consulting Website,” the company-provided clarification of positioning, services, markets and approach, and Seamless Constitution v2.0.0 (separate amendment approval pending).
+**Input**: Owner brief, “Immersive Pharmaceutical & International Business Consulting Website,” the company-provided clarification of positioning, services, markets and approach, and Seamless Constitution v2.0.0 (explicitly approved 2026-11-27).
 
 ## Clarifications
 
@@ -17,6 +17,16 @@
 - Q: What should the default scroll experience be on phones and tablets? → A: Desktop uses the full cinematic experience. Phones use a purpose-built vertical cinematic layout and may use short, justified pinned scenes. Tablets may use the desktop layout where viewport, orientation, input and performance support it. Otherwise, use the phone layout. Preserve content, functionality, reversible motion and accessible alternatives across modes.
 
 **Owner-supplied scope correction:** The site is entirely static and frontend-only. Public contact uses standard mailto after explicit interaction, with a revealable, selectable and copyable official email address. The complete address is absent from pre-interaction public sources, subject to approved mandatory legal disclosures.
+
+## Cinematic prototype acceptance
+
+The owner approved the first chapter?s visual direction and motion on 2026-11-27 and authorized the remaining prototype chapters without intermediate visual gates. Integrating the full prototype into the main website requires explicit final approval.
+
+- **PA-01 (FR-003, FR-005)**. Reduce desktop Hero headline type by approximately 25?30% using responsive sizing. Verify four or five lines at the 1440 px reference viewport with the approved wording, family and gold emphasis. Preserve the hero art, vial animation, supporting text and CTA buttons.
+- **PA-02 (FR-006)**. Remove all six service icons without decorative substitutes. Preserve all service copy, existing branches and their progressive, reversible activation.
+- **PA-03 (FR-001, FR-004, FR-007?009, FR-020?021, FR-024)**. Connect the remaining story through a single scroll-synchronized path. Verify the five approach stages, the five selectable markets, the restrained differentiator reveal, the separately identified Dubai and Saudi Arabia network, and the concluding vial scene and consultation CTA. Verify section order, scroll reversal, and essential content and actions in the applicable responsive and static modes.
+- **PA-04 (NFR-002?004)**. Keep motion enabled by default when system preferences allow it. Provide automatic reduced motion and static content without manual motion controls. Keep ambient effects scroll-driven so they hold when scrolling stops. Report local bundle and runtime measurements separately from device and production evidence.
+- **PA-05 (FR-013?015, NFR-010)**. Keep the prototype isolated. Verify the demonstration contact workflow without exposing the full address before interaction. The production alias, legal disclosure and privacy approval gates remain applicable.
 
 ## User Scenarios & Testing *(mandatory)*
 

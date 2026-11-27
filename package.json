@@ -1,0 +1,31 @@
+{
+  "name": "seamless-advisory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "build:release": "vite build --mode release",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "audit:dist": "node --experimental-strip-types build/audit-dist.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "3.14.2"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.58.2",
+    "@types/node": "22.20.7",
+    "typescript": "5.9.3",
+    "vite": "6.4.2",
+    "vitest": "3.2.6",
+    "zod": "4.1.12"
+  }
+}

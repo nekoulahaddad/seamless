@@ -4,7 +4,7 @@
 
 **Input**: Corrected [specification](spec.md) at `9ffb668dc1570444dbddd7d01883b36fbeef54c3` and original design at `5a4358e3839c66c197944137d362dae965225655`. The owner invoked `$speckit-plan` to advance the corrected scope and later referred to both artifacts as approved. [Constitution v2.0.0](../../.specify/memory/constitution.md) and the design synchronization are in `2da1d989fe3b7739aeda26e506f380f17167c598`.
 
-**Status**: The `$speckit-tasks` invocation authorized task generation from the synchronized baseline. It did not record separate explicit approval of the v2.0.0 amendment or implementation checklist. The remediation revisions await owner approval before implementation.
+**Status**: Owner-approved for implementation on 2026-11-27 at baseline a6580e47fca4972d107c442e245f59ef5b8d87bf. The updated hero uses the owner-supplied vial and dome reference. The approved architecture and release gates apply.
 
 ## Summary
 
@@ -31,7 +31,7 @@ email controls, and programmatic motion. The public deployment consists of stati
 
 | Gate | Before research | After design |
 | --- | --- | --- |
-| I and XII. Traceability and approval | Pass for planning. The owner initiated planning from the corrected spec. | Prior approvals and task-generation authorization are recorded above. The amendment and revised artifacts still require explicit approval before implementation. |
+| I and XII. Traceability and approval | Pass for planning. The owner initiated planning from the corrected spec. | The owner explicitly approved the amendment and revised spec, plan and tasks before implementation. Release evidence and release approval remain required. |
 | II and III. Editorial design and animation architecture | Pass. The approved creative direction requires programmatic enhancement. | Design defines scene boundaries, inputs, variants, assets, cleanup and fallback. Final approved visuals and device evidence are release gates. |
 | IV and V. Performance and responsive design | Pass. Static delivery supports device-specific enhancement. | Budgets and the desktop, tablet and phone validation matrix are defined. |
 | VI and XI. Accessibility and progressive enhancement | Pass. Static HTML is the starting point. | Contact discovery, instructions and any mandatory contact disclosure are script-independent. Interactive address reconstruction requires scripts per FR-014. Motion scripts are separate and optional. |
@@ -39,7 +39,7 @@ email controls, and programmatic motion. The public deployment consists of stati
 | VIII. Credibility | Pass. Claims require evidence and permission. | Build validation separates publication metadata from public output. Unsupported optional content and its links are omitted. |
 | IX and X. Security, privacy and quality | Pass for protected static contact. | Verify mailto, reveal, copy fallback and plaintext exposure against the security and accessibility contracts. Contact sends no site requests or telemetry. Verify approved privacy practices and applicable UK disclosures before release. |
 
-The v2.0.0 amendment aligns the constitution with the static design. The recorded task-phase authorization and the outstanding implementation gate are distinct. Release evidence remains required.
+The v2.0.0 amendment aligns the constitution with the static design. The recorded implementation approval applies to local development. Release evidence remains required.
 
 ## Project Structure
 

@@ -6,7 +6,7 @@ description: "Implementation tasks for the Seamless Cinematic Consulting Website
 
 **Input**: [Specification](spec.md), [plan](plan.md), [Constitution v2.0.0](../../.specify/memory/constitution.md), [research](research.md), [data model](data-model.md), [public page contract](contracts/public-pages.md), [contact and motion contract](contracts/contact-and-motion.md), and [quickstart](quickstart.md).
 
-**Approval record**: The owner advanced the corrected specification at `9ffb668dc1570444dbddd7d01883b36fbeef54c3` via `$speckit-plan` and later called the specification and design at `5a4358e3839c66c197944137d362dae965225655` approved. The owner invoked `$speckit-tasks` on 2026-11-26 to authorize task generation against the synchronized `2da1d989fe3b7739aeda26e506f380f17167c598` baseline. The remediation request authorizes document edits and reanalysis only. Separate explicit approval of Constitution v2.0.0 and the remediated baseline, including this implementation checklist, is pending.
+**Approval record**: The owner explicitly approved Constitution v2.0.0, the updated Specification, Plan and Tasks on 2026-11-27 at baseline a6580e47fca4972d107c442e245f59ef5b8d87bf. The owner confirmed implementation with the requirements checklist at 14/16 and approved the vial-and-dome reference as the visual direction. Production release approval is separate.
 
 **Organization**: One independent story phase per priority-ordered story. Automated tests are included under NFR-008 and Constitution X.
 
@@ -25,20 +25,20 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 **Purpose**: Establish the approved static toolchain and repeatable local commands.
 
-- [ ] T001 Initialize the compatible Node LTS and npm lockfile, Vite and TypeScript tooling, build-only Zod, Vitest, Playwright and axe. Install and lock GSAP in `package.json` and `package-lock.json` and use its bundled ScrollTrigger plugin via T025. Add the exact command names in [quickstart.md](quickstart.md) using `package.json`, `package-lock.json` and `.node-version`.
-- [ ] T002 [P] Configure strict TypeScript for feature and build-time modules in `tsconfig.json`; document approved dependency boundaries and keep generated, local credential and QA artifacts out of publication with `.gitignore`.
-- [ ] T003 [P] Define cross-browser runners, preview startup and synthetic fixture routing in `playwright.config.ts` and `vitest.config.ts`.
+- [X] T001 Initialize the compatible Node LTS and npm lockfile, Vite and TypeScript tooling, build-only Zod, Vitest, Playwright and axe. Install and lock GSAP in `package.json` and `package-lock.json` and use its bundled ScrollTrigger plugin via T025. Add the exact command names in [quickstart.md](quickstart.md) using `package.json`, `package-lock.json` and `.node-version`.
+- [X] T002 [P] Configure strict TypeScript for feature and build-time modules in `tsconfig.json`; document approved dependency boundaries and keep generated, local credential and QA artifacts out of publication with `.gitignore`.
+- [X] T003 [P] Define cross-browser runners, preview startup and synthetic fixture routing in `playwright.config.ts` and `vitest.config.ts`.
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
 **Purpose**: Make content, routes, publication rules and static output safe for every story.
 
-- [ ] T004 [P] Validate site identity and required launch configuration in `build/site-profile-schema.ts` using `Site profile.display name`, `Site profile.approved mission and positioning`, `Site profile.logo asset`, `Site profile.canonical origin`, `Site profile.locale`, `Site profile.navigation`, `Site profile.legal page references` and `Site profile.contact configuration reference` from [data-model.md](data-model.md).
-- [ ] T005 [P] Define locale and route validation in `build/page-schema.ts` using `Page and locale entry.stable ID`, `Page and locale entry.locale`, `Page and locale entry.direction`, `Page and locale entry.localized path`, `Page and locale entry.title`, `Page and locale entry.description`, `Page and locale entry.social image` and `Page and locale entry.ordered sections` from [data-model.md](data-model.md).
-- [ ] T006 [P] Implement evidence validation and publication projection in `build/publication.ts` using `Claim evidence.private reference`, `Claim evidence.claim ID`, `Claim evidence.source`, `Claim evidence.geographic and factual scope`, `Claim evidence.verification date`, `Claim evidence.approval` and `Claim evidence.publication status` from [data-model.md](data-model.md); omit withdrawn data and never serialize private sources.
-- [ ] T007 [P] Establish semantic page primitives, escaping and applicable shared styles in `src/shared/render/escape-html.ts`, `src/shared/render/page-shell.ts` and `src/shared/styles/base.css`; keep feature rules in their features.
-- [ ] T008 Wire the schema results and route manifest into multi-page HTML assembly and Vite in `build/assemble-pages.ts`, `build/routes.ts` and `vite.config.ts`; emit only static files to `dist/` and prevent fixture output from qualifying as production.
-- [ ] T009 Add fixture checks for invalid references, unique routes, missing launch inputs and private fields leaking into static output in `tests/unit/build/publication.test.ts` and `tests/unit/build/routes.test.ts`.
+- [X] T004 [P] Validate site identity and required launch configuration in `build/site-profile-schema.ts` using `Site profile.display name`, `Site profile.approved mission and positioning`, `Site profile.logo asset`, `Site profile.canonical origin`, `Site profile.locale`, `Site profile.navigation`, `Site profile.legal page references` and `Site profile.contact configuration reference` from [data-model.md](data-model.md).
+- [X] T005 [P] Define locale and route validation in `build/page-schema.ts` using `Page and locale entry.stable ID`, `Page and locale entry.locale`, `Page and locale entry.direction`, `Page and locale entry.localized path`, `Page and locale entry.title`, `Page and locale entry.description`, `Page and locale entry.social image` and `Page and locale entry.ordered sections` from [data-model.md](data-model.md).
+- [X] T006 [P] Implement evidence validation and publication projection in `build/publication.ts` using `Claim evidence.private reference`, `Claim evidence.claim ID`, `Claim evidence.source`, `Claim evidence.geographic and factual scope`, `Claim evidence.verification date`, `Claim evidence.approval` and `Claim evidence.publication status` from [data-model.md](data-model.md); omit withdrawn data and never serialize private sources.
+- [X] T007 [P] Establish semantic page primitives, escaping and applicable shared styles in `src/shared/render/escape-html.ts`, `src/shared/render/page-shell.ts` and `src/shared/styles/base.css`; keep feature rules in their features.
+- [X] T008 Wire the schema results and route manifest into multi-page HTML assembly and Vite in `build/assemble-pages.ts`, `build/routes.ts` and `vite.config.ts`; emit only static files to `dist/` and prevent fixture output from qualifying as production.
+- [X] T009 Add fixture checks for invalid references, unique routes, missing launch inputs and private fields leaking into static output in `tests/unit/build/publication.test.ts` and `tests/unit/build/routes.test.ts`.
 
 ## Phase 3: User Story 1 - Understand the company and find relevant information (Priority: P1)
 
@@ -48,14 +48,14 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 ### Tests for User Story 1
 
-- [ ] T010 [P] [US1] Write initial-HTML and navigation contract tests for launch routes, no-script essential content, headings, anchor validity and metadata in `tests/e2e/discovery.spec.ts`.
+- [X] T010 [P] [US1] Write initial-HTML and navigation contract tests for launch routes, no-script essential content, headings, anchor validity and metadata in `tests/e2e/discovery.spec.ts`.
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Implement the static full-viewport hero and approved introduction, lab vial poster and both hero CTAs in `src/features/hero/render-hero.ts`, `src/features/hero/render-introduction.ts` and `src/features/hero/hero.css`.
-- [ ] T012 [P] [US1] Implement primary navigation, skip link, responsive menu, readable scrolled header, and motion-safe anchor links in `src/features/navigation/render-navigation.ts`, `src/features/navigation/menu.ts` and `src/features/navigation/navigation.css`.
-- [ ] T013 [P] [US1] Generate page-specific canonical, Open Graph, applicable verified structured data and crawl directives in `build/render-metadata.ts` and `build/render-discovery-files.ts` (FR-017, SC-010).
-- [ ] T014 [US1] Compose the FR-001 homepage shell and static Expertise, Markets and Contact destinations and footer with approved legal and contact links in `src/pages/home/render-home.ts`, `src/pages/home/render-discovery.ts` and `src/shared/render/render-footer.ts`; source public text through the approved site profile and preserve stable section anchors for later enhancements.
+- [X] T011 [P] [US1] Implement the static full-viewport hero and approved introduction, lab vial poster and both hero CTAs in `src/features/hero/render-hero.ts`, `src/features/hero/render-introduction.ts` and `src/features/hero/hero.css`.
+- [X] T012 [P] [US1] Implement primary navigation, skip link, responsive menu, readable scrolled header, and motion-safe anchor links in `src/features/navigation/render-navigation.ts`, `src/features/navigation/menu.ts` and `src/features/navigation/navigation.css`.
+- [X] T013 [P] [US1] Generate page-specific canonical, Open Graph, applicable verified structured data and crawl directives in `build/render-metadata.ts` and `build/render-discovery-files.ts` (FR-017, SC-010).
+- [X] T014 [US1] Compose the FR-001 homepage shell and static Expertise, Markets and Contact destinations and footer with approved legal and contact links in `src/pages/home/render-home.ts`, `src/pages/home/render-discovery.ts` and `src/shared/render/render-footer.ts`; source public text through the approved site profile and preserve stable section anchors for later enhancements.
 
 ## Phase 4: User Story 2 - Contact the company about a consultation (Priority: P1)
 
@@ -65,15 +65,15 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 ### Tests for User Story 2
 
-- [ ] T015 [P] [US2] Write contact contract tests for explicit activation, keyboard and pointer, no-contact network traffic, reveal, denied clipboard, accessible feedback and no-script instructions in `tests/e2e/contact.spec.ts`.
-- [ ] T016 [P] [US2] Write build tests with a synthetic alias for plaintext exposure and the exact allowlist, including approved multiple locations, unexpected paths and nodes, count drift, empty and pending decisions in `tests/unit/build/contact-output.test.ts`.
+- [X] T015 [P] [US2] Write contact contract tests for explicit activation, keyboard and pointer, no-contact network traffic, reveal, denied clipboard, accessible feedback and no-script instructions in `tests/e2e/contact.spec.ts`.
+- [X] T016 [P] [US2] Write build tests with a synthetic alias for plaintext exposure and the exact allowlist, including approved multiple locations, unexpected paths and nodes, count drift, empty and pending decisions in `tests/unit/build/contact-output.test.ts`.
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Validate and obfuscate the sole contact build input in `build/protected-contact.ts` using `Protected contact.approved alias`, `Protected contact.internally managed build input`, `Protected contact.applicable mandatory disclosure fields` and `Protected contact.approved static locations` from [data-model.md](data-model.md); keep source configuration out of public artifacts.
-- [ ] T018 [P] [US2] Implement the Contact markup, accessible controls, status feedback, selectable fallback, and no-script instructions in `src/features/contact/render-contact.ts` and `src/features/contact/contact.css`; keep the protected recipient out of initial markup.
-- [ ] T019 [US2] Implement independent email activation, reconstruction and clipboard handling in `src/features/contact/contact-controls.ts` and `src/features/contact/copy-address.ts`; no tracking, browser storage, or site network call (FR-013–015, FR-025).
-- [ ] T020 [US2] Wire Contact, approved Privacy Policy and Terms, and required static UK disclosure placement in `src/pages/home/render-home.ts`, `src/pages/privacy/render-privacy.ts`, `src/pages/terms/render-terms.ts` and `src/features/contact/render-legal-disclosure.ts`; preserve the mandatory disclosure exception and keep the motion dependency out of Contact (FR-026).
+- [X] T017 [US2] Validate and obfuscate the sole contact build input in `build/protected-contact.ts` using `Protected contact.approved alias`, `Protected contact.internally managed build input`, `Protected contact.applicable mandatory disclosure fields` and `Protected contact.approved static locations` from [data-model.md](data-model.md); keep source configuration out of public artifacts.
+- [X] T018 [P] [US2] Implement the Contact markup, accessible controls, status feedback, selectable fallback, and no-script instructions in `src/features/contact/render-contact.ts` and `src/features/contact/contact.css`; keep the protected recipient out of initial markup.
+- [X] T019 [US2] Implement independent email activation, reconstruction and clipboard handling in `src/features/contact/contact-controls.ts` and `src/features/contact/copy-address.ts`; no tracking, browser storage, or site network call (FR-013–015, FR-025).
+- [X] T020 [US2] Wire Contact, approved Privacy Policy and Terms, and required static UK disclosure placement in `src/pages/home/render-home.ts`, `src/pages/privacy/render-privacy.ts`, `src/pages/terms/render-terms.ts` and `src/features/contact/render-legal-disclosure.ts`; preserve the mandatory disclosure exception and keep the motion dependency out of Contact (FR-026).
 
 ## Phase 5: User Story 3 - Follow the molecule-to-market journey (Priority: P1)
 
@@ -83,15 +83,15 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 ### Tests for User Story 3
 
-- [ ] T021 [P] [US3] Write the motion contract tests for forward/reverse stages, truthful progress, section exit, anchor access and static fallback in `tests/e2e/approach-motion.spec.ts`.
+- [X] T021 [P] [US3] Write the motion contract tests for forward/reverse stages, truthful progress, section exit, anchor access and static fallback in `tests/e2e/approach-motion.spec.ts`.
 
 ### Implementation for User Story 3
 
-- [ ] T022 [P] [US3] Create scene brief and asset validation in `build/scene-schema.ts` using `Scene and visual asset.scene ID`, `Scene and visual asset.section ID`, `Scene and visual asset.goal and order`, `Scene and visual asset.visual design`, `Scene and visual asset.camera and object cue intent`, `Scene and visual asset.start/end compositions`, `Scene and visual asset.visual layers`, `Scene and visual asset.responsive asset variants`, `Scene and visual asset.dimensions`, `Scene and visual asset.rights`, `Scene and visual asset.fallback` and `Scene and visual asset.load priority` from [data-model.md](data-model.md).
+- [X] T022 [P] [US3] Create scene brief and asset validation in `build/scene-schema.ts` using `Scene and visual asset.scene ID`, `Scene and visual asset.section ID`, `Scene and visual asset.goal and order`, `Scene and visual asset.visual design`, `Scene and visual asset.camera and object cue intent`, `Scene and visual asset.start/end compositions`, `Scene and visual asset.visual layers`, `Scene and visual asset.responsive asset variants`, `Scene and visual asset.dimensions`, `Scene and visual asset.rights`, `Scene and visual asset.fallback` and `Scene and visual asset.load priority` from [data-model.md](data-model.md).
 - [ ] T023 [US3] Author Hero, Global Market Connections, Expertise, five Approach stages, Our Markets and Final Cinematic Scene briefs in `content/scenes/hero.md`, `content/scenes/global-market-connections.md`, `content/scenes/expertise.md`, `content/scenes/approach.md`, `content/scenes/our-markets.md` and `content/scenes/final-scene.md` using FR-020. Keep fixture and approved final asset states distinct. Record licensed responsive still variants, dimensions, posters, fallbacks and load priorities in `content/scenes/asset-manifest.ts`; optimize and place approved files under `assets/scenes/` as they become available.
-- [ ] T024 [P] [US3] Render the five ordered approach stages and recurring vial finale, including static alternatives and Contact anchor, in `src/features/approach/render-approach.ts` and `src/features/approach/render-finale.ts`.
-- [ ] T025 [US3] Import GSAP and its bundled ScrollTrigger only through the isolated lazy motion entry, keeping both out of startup, legal and Contact chunks. Implement native-scroll scene progress, entry/exit cleanup, pin scope and reversible timelines in `src/features/approach/load-motion.ts`, `src/features/approach/create-timeline.ts` and `src/features/approach/scene-lifecycle.ts`.
-- [ ] T026 [US3] Drive the visual sequence, hero transition, expertise progression, both geographic scenes and vial reprise from explicit feature cues in `src/features/hero/hero-motion.ts`, `src/features/expertise/expertise-motion.ts`, `src/features/approach/approach-motion.ts`, `src/features/approach/finale-motion.ts` and `src/features/markets/market-motion.ts`. Pin visuals only and keep narrative in document order; verify FR-024 media exclusions.
+- [X] T024 [P] [US3] Render the five ordered approach stages and recurring vial finale, including static alternatives and Contact anchor, in `src/features/approach/render-approach.ts` and `src/features/approach/render-finale.ts`.
+- [X] T025 [US3] Import GSAP and its bundled ScrollTrigger only through the isolated lazy motion entry, keeping both out of startup, legal and Contact chunks. Implement native-scroll scene progress, entry/exit cleanup, pin scope and reversible timelines in `src/features/approach/load-motion.ts`, `src/features/approach/create-timeline.ts` and `src/features/approach/scene-lifecycle.ts`.
+- [X] T026 [US3] Drive the visual sequence, hero transition, expertise progression, both geographic scenes and vial reprise from explicit feature cues in `src/features/hero/hero-motion.ts`, `src/features/expertise/expertise-motion.ts`, `src/features/approach/approach-motion.ts`, `src/features/approach/finale-motion.ts` and `src/features/markets/market-motion.ts`. Pin visuals only and keep narrative in document order; verify FR-024 media exclusions.
 
 ## Phase 6: User Story 4 - Use the site comfortably on mobile or with assistive technology (Priority: P1)
 
@@ -101,13 +101,13 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 ### Tests for User Story 4
 
-- [ ] T027 [P] [US4] Write device-mode, keyboard and axe checks for phone, tablet, reduced motion, focus visibility, responsive overflow and session navigation in `tests/e2e/responsive-accessibility.spec.ts`.
+- [X] T027 [P] [US4] Write device-mode, keyboard and axe checks for phone, tablet, reduced motion, focus visibility, responsive overflow and session navigation in `tests/e2e/responsive-accessibility.spec.ts`.
 
 ### Implementation for User Story 4
 
-- [ ] T028 [P] [US4] Implement normal vertical phone flow, responsive compositions and accessible focus offsets in `src/features/approach/approach.css`, `src/features/expertise/expertise.css` and `src/features/navigation/focus-offset.css`.
-- [ ] T029 [P] [US4] Implement full, vertical and static selection and teardown on preference, viewport, orientation and input changes in `src/features/approach/presentation-mode.ts` and `src/features/approach/motion-preferences.ts`; use vertical on unqualified tablets and preserve current reading section and focus.
-- [ ] T030 [US4] Apply the mode to the story timelines, reduced-motion control and selective resource loading in `src/features/approach/activate-motion.ts` and `src/features/approach/scene-assets.ts`; default phones to vertical, require evidence before adding a short phone pin, and keep contact and market content available without motion.
+- [X] T028 [P] [US4] Implement normal vertical phone flow, responsive compositions and accessible focus offsets in `src/features/approach/approach.css`, `src/features/expertise/expertise.css` and `src/features/navigation/focus-offset.css`.
+- [X] T029 [P] [US4] Implement full, vertical and static selection and teardown on preference, viewport, orientation and input changes in `src/features/approach/presentation-mode.ts` and `src/features/approach/motion-preferences.ts`; use vertical on unqualified tablets and preserve current reading section and focus.
+- [X] T030 [US4] Apply the mode to the story timelines, reduced-motion control and selective resource loading in `src/features/approach/activate-motion.ts` and `src/features/approach/scene-assets.ts`; default phones to vertical, require evidence before adding a short phone pin, and keep contact and market content available without motion.
 
 ## Phase 7: User Story 5 - Assess services, markets, and credibility (Priority: P2)
 
@@ -117,15 +117,15 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 ### Tests for User Story 5
 
-- [ ] T031 [P] [US5] Write service, map and publication contract tests for five selectable markets, partner distinctions, withheld claims and omitted section anchors in `tests/e2e/markets-credibility.spec.ts`.
+- [X] T031 [P] [US5] Write service, map and publication contract tests for five selectable markets, partner distinctions, withheld claims and omitted section anchors in `tests/e2e/markets-credibility.spec.ts`.
 
 ### Implementation for User Story 5
 
-- [ ] T032 [P] [US5] Implement six service records and static panel rendering in `build/service-schema.ts`, `content/services/catalog.ts` and `src/features/expertise/render-expertise.ts` using `Service.ID`, `Service.official name`, `Service.summary`, `Service.benefits`, `Service.visual references`, `Service.relevant market references` and `Service.optional published detail link` from [data-model.md](data-model.md).
-- [ ] T033 [P] [US5] Validate geographic and network records in `build/geography-schema.ts`, `content/markets/catalog.ts` and `content/network/locations.ts` using `Market.country ID`, `Market.display name`, `Market.approved region`, `Market.optional profile and regulatory/commercial claims`, `Market.service IDs`, `Market.map target`, `Network location and partner.location ID`, `Network location and partner.Dubai/UAE or Saudi Arabia label`, `Network location and partner.optional partner name`, `Network location and partner.role`, `Network location and partner.cooperation scope` and `Network location and partner.logo and permission` from [data-model.md](data-model.md).
-- [ ] T034 [P] [US5] Validate optional approved credibility records in `build/credibility-schema.ts` and `content/credibility/catalog.ts` using `Manufacturer, metric and case.manufacturer and facility scope`, `Manufacturer, metric and case.imagery and evidence`, `Manufacturer, metric and case.metric label`, `Manufacturer, metric and case.value`, `Manufacturer, metric and case.scope`, `Manufacturer, metric and case.case title`, `Manufacturer, metric and case.market`, `Manufacturer, metric and case.services`, `Manufacturer, metric and case.approach`, `Manufacturer, metric and case.outcome` and `Manufacturer, metric and case.confidentiality approval` from [data-model.md](data-model.md).
-- [ ] T035 [US5] Render a distinct Global Market Connections section with a static text/map alternative and the separate Our Markets selection view. Integrate approved SVG geography, country links, optional profiles, selected-country feedback and no-motion alternative in `src/features/markets/render-market-map.ts`, `src/features/markets/render-market-profiles.ts` and `src/features/markets/select-market.ts` (FR-004, FR-009).
-- [ ] T036 [US5] Render approved differentiators, partner network and conditional manufacturer, metrics and case sections in `src/features/credibility/render-differentiators.ts`, `src/features/credibility/render-network.ts` and `src/features/credibility/render-evidence.ts`. Add the restrained scroll reveal in `src/features/credibility/differentiators-motion.ts`; keep the copy visible without scripts, with reduced motion, and if assets fail (FR-021).
+- [X] T032 [P] [US5] Implement six service records and static panel rendering in `build/service-schema.ts`, `content/services/catalog.ts` and `src/features/expertise/render-expertise.ts` using `Service.ID`, `Service.official name`, `Service.summary`, `Service.benefits`, `Service.visual references`, `Service.relevant market references` and `Service.optional published detail link` from [data-model.md](data-model.md).
+- [X] T033 [P] [US5] Validate geographic and network records in `build/geography-schema.ts`, `content/markets/catalog.ts` and `content/network/locations.ts` using `Market.country ID`, `Market.display name`, `Market.approved region`, `Market.optional profile and regulatory/commercial claims`, `Market.service IDs`, `Market.map target`, `Network location and partner.location ID`, `Network location and partner.Dubai/UAE or Saudi Arabia label`, `Network location and partner.optional partner name`, `Network location and partner.role`, `Network location and partner.cooperation scope` and `Network location and partner.logo and permission` from [data-model.md](data-model.md).
+- [X] T034 [P] [US5] Validate optional approved credibility records in `build/credibility-schema.ts` and `content/credibility/catalog.ts` using `Manufacturer, metric and case.manufacturer and facility scope`, `Manufacturer, metric and case.imagery and evidence`, `Manufacturer, metric and case.metric label`, `Manufacturer, metric and case.value`, `Manufacturer, metric and case.scope`, `Manufacturer, metric and case.case title`, `Manufacturer, metric and case.market`, `Manufacturer, metric and case.services`, `Manufacturer, metric and case.approach`, `Manufacturer, metric and case.outcome` and `Manufacturer, metric and case.confidentiality approval` from [data-model.md](data-model.md).
+- [X] T035 [US5] Render a distinct Global Market Connections section with a static text/map alternative and the separate Our Markets selection view. Integrate approved SVG geography, country links, optional profiles, selected-country feedback and no-motion alternative in `src/features/markets/render-market-map.ts`, `src/features/markets/render-market-profiles.ts` and `src/features/markets/select-market.ts` (FR-004, FR-009).
+- [X] T036 [US5] Render approved differentiators, partner network and conditional manufacturer, metrics and case sections in `src/features/credibility/render-differentiators.ts`, `src/features/credibility/render-network.ts` and `src/features/credibility/render-evidence.ts`. Add the restrained scroll reveal in `src/features/credibility/differentiators-motion.ts`; keep the copy visible without scripts, with reduced motion, and if assets fail (FR-021).
 
 ## Phase 8: User Story 6 - Maintain trustworthy content and measure engagement (Priority: P2)
 
@@ -135,27 +135,37 @@ Use the single static project from [plan.md](plan.md). Build utilities live in `
 
 ### Tests for User Story 6
 
-- [ ] T037 [P] [US6] Write locale, fixture isolation and permitted engagement tests in `tests/unit/build/editorial-workflow.test.ts` and `tests/e2e/engagement.spec.ts`; cover withdrawal, no opt-in, blocked personal fields and no contact events.
+- [X] T037 [P] [US6] Write locale, fixture isolation and permitted engagement tests in `tests/unit/build/editorial-workflow.test.ts` and `tests/e2e/engagement.spec.ts`; cover withdrawal, no opt-in, blocked personal fields and no contact events.
 
 ### Implementation for User Story 6
 
-- [ ] T038 [P] [US6] Implement localized content lookup and logical direction handling in `build/localized-content.ts`, `content/locales/en.ts` and `src/shared/styles/direction.css`; exercise a future-locale fixture without publishing an unapproved launch locale (FR-016, FR-018).
-- [ ] T039 [P] [US6] Implement approval-gated event validation and optional client event boundaries in `build/engagement-schema.ts` and `src/features/credibility/content-engagement.ts` using `Engagement event.optional approved event name` and `Engagement event.allowed anonymous properties` from [data-model.md](data-model.md); keep analytics disabled by default and leave provider selection out unless separately approved (FR-019).
-- [ ] T040 [US6] Document content updates, evidence and withdrawal checks, and the privacy/approval gate in `content/README.md`; connect the publication projection and event gate in `build/assemble-pages.ts` only after earlier page integrations are stable.
+- [X] T038 [P] [US6] Implement localized content lookup and logical direction handling in `build/localized-content.ts`, `content/locales/en.ts` and `src/shared/styles/direction.css`; exercise a future-locale fixture without publishing an unapproved launch locale (FR-016, FR-018).
+- [X] T039 [P] [US6] Implement approval-gated event validation and optional client event boundaries in `build/engagement-schema.ts` and `src/features/credibility/content-engagement.ts` using `Engagement event.optional approved event name` and `Engagement event.allowed anonymous properties` from [data-model.md](data-model.md); keep analytics disabled by default and leave provider selection out unless separately approved (FR-019).
+- [X] T040 [US6] Document content updates, evidence and withdrawal checks, and the privacy/approval gate in `content/README.md`; connect the publication projection and event gate in `build/assemble-pages.ts` only after earlier page integrations are stable.
 
 ## Phase 9: Polish & Cross-Cutting Concerns
 
 **Purpose**: Gather end-to-end release evidence against the approved constraints and budget.
 
-- [ ] T041 Write and run the full-homepage acceptance check in `tests/e2e/homepage-integration.spec.ts`. Mount the required sections and optional approved sections in FR-001 order in `src/pages/home/render-home.ts`, and activate each eligible programmatic scene and Why Work With Us through the standalone `src/pages/home/enhance-home.ts` entry. Preserve Contact independence and remove dead navigation links in `src/features/navigation/render-navigation.ts`. Check order, anchors and readable content with scripts on and off. Verify scene activation and reversal, Global Market Connections fallback, and restrained reveal fallback (FR-001, FR-004, FR-007, FR-008, FR-021, FR-024, SC-003, SC-004, SC-008).
-- [ ] T042 Implement the static artifact and disclosure allowlist audit in `build/audit-dist.ts` and its command in `package.json` using `Protected contact.approved static locations` from [data-model.md](data-model.md). Reject unexpected paths, elements and counts, forbidden media, runtime handlers, exposed secrets, private evidence and stale links (SC-011).
-- [ ] T043 Run fixture and, when owner inputs are available, approved-input build, type, unit and three-engine browser validation from `quickstart.md`; record automated checks and owner-controlled inputs in `specs/001-cinematic-consulting-website/validation/build-and-content.md`.
+- [X] T041 Write and run the full-homepage acceptance check in `tests/e2e/homepage-integration.spec.ts`. Mount the required sections and optional approved sections in FR-001 order in `src/pages/home/render-home.ts`, and activate each eligible programmatic scene and Why Work With Us through the standalone `src/pages/home/enhance-home.ts` entry. Preserve Contact independence and remove dead navigation links in `src/features/navigation/render-navigation.ts`. Check order, anchors and readable content with scripts on and off. Verify scene activation and reversal, Global Market Connections fallback, and restrained reveal fallback (FR-001, FR-004, FR-007, FR-008, FR-021, FR-024, SC-003, SC-004, SC-008).
+- [X] T042 Implement the static artifact and disclosure allowlist audit in `build/audit-dist.ts` and its command in `package.json` using `Protected contact.approved static locations` from [data-model.md](data-model.md). Reject unexpected paths, elements and counts, forbidden media, runtime handlers, exposed secrets, private evidence and stale links (SC-011).
+- [X] T043 Run fixture and, when owner inputs are available, approved-input build, type, unit and three-engine browser validation from `quickstart.md`; record automated checks and owner-controlled inputs in `specs/001-cinematic-consulting-website/validation/build-and-content.md`.
 - [ ] T044 [P] Verify real-device motion, keyboard, screen reader, no traps, actual mailto and clipboard fallback, required UK disclosures with scripts off, and no contact telemetry; record evidence in `specs/001-cinematic-consulting-website/validation/accessibility-and-contact.md`.
 - [ ] T045 [P] Run the pre-release lab interaction and local journey INP protocol on representative desktop and physical mid-range mobile, recording cold and warm results, Lighthouse LCP/CLS and diagnostic TBT, transfer, motion, heap and distinct production field-data availability in `specs/001-cinematic-consulting-website/validation/performance.md` (NFR-004, SC-006).
 - [ ] T046 [P] Audit deployed HTML, JavaScript and lazy chunks, metadata, structured data, public configuration, source maps and downloadable assets on the authorized release candidate with CDN mitigation disabled and on the public delivery path. Match only the exact allowlist and verify required visible static disclosures. Record masked results in `specs/001-cinematic-consulting-website/validation/served-output-security.md` (NFR-006, NFR-010, SC-011).
 - [ ] T047 [P] Verify deployed HTTPS and HTTP redirects if applicable, HTML and crawl metadata cache behaviour, hashed-asset headers, genuine missing-page and missing-asset HTTP 404 responses, and MIME types per the public-pages contract. Record observations in `specs/001-cinematic-consulting-website/validation/hosting.md` (FR-017, NFR-006, NFR-009, SC-010, SC-011).
 - [ ] T048 [P] Run the five-participant protocol in `quickstart.md` on the release candidate and record all criteria, scores, timings and anonymized evidence in `specs/001-cinematic-consulting-website/validation/participant-acceptance.md`. Hold acceptance until the 4-of-5 thresholds pass (SC-001–003, SC-005).
 - [ ] T049 Review final scenes and rights, legal entity and approved disclosure allowlist, verified alias, policies, domain, required content and acceptance evidence in `specs/001-cinematic-consulting-website/validation/release-gate.md`. If edge mitigation is separately approved, verify legitimate crawler access and compare SEO, accessibility and performance before enabling it. Hold production approval while required inputs or evidence are missing.
+
+## Isolated Cinematic Prototype Review
+
+- [X] T050 Implement and verify the approved Hero typography and icon-free Expertise rows in the standalone prototype (PA-01, PA-02).
+- [X] T051 Extend the continuous story and responsive/static equivalents through Global Market Connections, the five Approach stages, Markets, Why Work With Us, Regional and Strategic Network, and the closing CTA (PA-03).
+- [X] T052 Preserve the existing scroll-driven Hero, capsule scan, and branches. Remove the experimental Three.js runtime from the prototype and validate the programmatic SVG capsule with the same scroll pose (PA-02, PA-04).
+- [X] T053 Verify the complete prototype on desktop, phone emulation, CSS reduced motion, and with scripts disabled. Save screenshots, browser results, and local performance evidence (PA-03?05, [prototype evidence](validation/cinematic-prototype.md)).
+- [ ] T054 Hold integration into the main website until the owner explicitly approves the complete prototype. Production release checks T044?T049 retain their existing requirements.
+
+T050 follows first-chapter visual approval. T051 and T052 must precede T053. T054 follows T053 and explicit owner approval.
 
 ## Dependencies & Execution Order
 
