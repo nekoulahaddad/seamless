@@ -1,0 +1,30 @@
+.advantages-chapter{position:relative;isolation:isolate;padding:clamp(4rem,8vw,8rem) var(--gutter) clamp(5rem,9vw,9rem);background:radial-gradient(ellipse at 80% 48%,#092b3b,transparent 60%)}
+.advantages-heading,.advantages-grid{position:relative;z-index:3}
+.advantages-heading h2{max-inline-size:none}
+.advantages-heading .description{max-inline-size:unset;margin:1rem 0 0}
+.advantages-heading .description::after{content:"";display:block;width:3.6rem;height:2px;background:#e4bd7f;margin-block-start:1.3rem}
+.advantage-art{position:absolute;pointer-events:none;z-index:1;right:0;top:10%;width:min(46vw,52rem);aspect-ratio:680 / 560}
+.advantage-atmosphere,.vial-orbit{width:100%;height:100%;position:absolute;inset:0}
+.advantage-atmosphere{object-fit:cover;mask-image:radial-gradient(ellipse at 53% 58%,#000 36%,transparent 73%);opacity:.88}
+.stationary-vial{display:block;width:100%;height:100%;object-fit:contain}
+.orbit-line,.orbit-halo,.orbit-sparks{fill:none;stroke:url(#orbit-light);stroke-linecap:round}
+.orbit-line{stroke-width:2.2}
+.orbit-front-light{opacity:.84}
+.orbit-halo{stroke-width:8;filter:blur(6px);opacity:.7}
+.orbit-sparks{stroke-width:1.8;stroke-dasharray:.25 14;transform:translateY(9px);opacity:.52}
+.advantages-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem;width:min(66vw,59rem);padding:0;list-style:none;margin:clamp(2.2rem,5vw,4.5rem) 0 0}
+.advantage-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;min-height:clamp(8rem,13vw,12rem);padding:1rem .75rem;overflow:hidden;position:relative;border:1px solid #70b8c254;border-radius:.9rem;text-align:center;color:#f1f7fb;background:radial-gradient(ellipse at 5% 0,#24849941,transparent 70%),linear-gradient(155deg,#0b2936ed,#081d2bf7 55%,#0b303dbb);font-size:clamp(.84rem,1.13vw,1.12rem);line-height:1.34}
+.advantage-card:nth-child(4){grid-column:1}
+.advantage-card::after{content:"";position:absolute;pointer-events:none;width:130%;height:2.1rem;inset:auto -16% -1.75rem;border-radius:50%;box-shadow:0 -1px 1px #ecc28166,0 -8px 20px #d6993b1c;transform:rotate(-7deg)}
+.advantage-card svg{width:clamp(1.7rem,3.2vw,2.75rem);flex:none;fill:none;stroke:#ffd184;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){
+ .advantages-chapter{padding-block:clamp(3.4rem,8vw,5rem) 3.9rem}
+ .advantages-heading h2{max-inline-size:10ch}
+ .advantages-heading .description{max-inline-size:30ch}
+ .advantages-heading .description::after{margin-top:1rem}
+ .advantage-art{position:relative;right:auto;top:auto;width:min(100%,34rem);margin:-.65rem auto -.15rem}
+ .advantages-grid{display:grid;grid-template-columns:1fr;width:100%;gap:.5rem;margin:0}
+ .advantage-card{min-height:3.55rem;flex-direction:row;justify-content:flex-start;gap:clamp(.85rem,4vw,1.65rem);padding:.62rem clamp(.9rem,5vw,1.9rem);border-radius:2rem;text-align:left;line-height:1.25;font-size:clamp(.88rem,3.75vw,1.12rem);background:radial-gradient(ellipse at 0 0,#b9863e24,transparent 42%),linear-gradient(100deg,#0d2b34ee,#082431);box-shadow:inset 1px 1px 0 #f5c67e37}
+ .advantage-card svg{width:1.58rem}
+ .advantage-card::after{display:none}
+}

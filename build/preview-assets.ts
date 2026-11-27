@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import type { Plugin } from 'vite';
 
 export function previewAssets(assets:string):Plugin {
-  const folders=['brand','art','legal'];
+  const folders=['brand','art'];
   const paths=['favicon.ico',...folders.flatMap((folder)=>{
     const directory=resolve(assets,folder);
     if(!existsSync(directory)) return [];
@@ -30,6 +30,5 @@ function mediaType(path:string):string {
   if(path.endsWith('.jpg')) return 'image/jpeg';
   if(path.endsWith('.ico')) return 'image/x-icon';
   if(path.endsWith('.webp')) return 'image/webp';
-  if(path.endsWith('.pdf')) return 'application/pdf';
   return 'application/manifest+json';
 }

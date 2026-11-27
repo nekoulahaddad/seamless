@@ -6,7 +6,8 @@ import { escapeHtml as esc } from '../../shared/render/escape-html';
 import { renderApproach } from './chapters/approach';
 import { renderDifferentiators } from './chapters/closing';
 import { renderContact } from './chapters/contact';
-import { renderFooter, type FooterLinks } from './chapters/footer';
+import { renderFooter } from '../../shared/render/render-footer';
+import { fixtureProfile } from '../../../content/site-fixture';
 import { renderMarkets } from './chapters/markets';
 import { mobileNavigation } from './chapters/mobile-navigation';
 
@@ -16,7 +17,6 @@ interface CinematicHome {
   encodedAlias:string|undefined;
   disclosure:string;
   services:readonly Service[];
-  footer:FooterLinks;
 }
 
 export const cinematicSections=['hero','about','expertise','approach','markets','why-work-with-us','contact'] as const;
@@ -37,7 +37,7 @@ export function renderCinematicHome(input:CinematicHome):string {
     .replace('<!-- menu-brand -->',()=>brand)
     .replace('<!-- services -->',()=>renderServices(input.services))
     .replace('<!-- remaining-chapters -->',()=>sections)
-    .replace('<!-- cinematic-footer -->',()=>renderFooter(input.footer,2026));
+    .replace('<!-- cinematic-footer -->',()=>renderFooter(fixtureProfile,'#hero'));
 }
 
 function renderServices(services:readonly Service[]):string {

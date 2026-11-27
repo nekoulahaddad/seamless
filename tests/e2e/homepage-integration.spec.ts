@@ -12,7 +12,7 @@ for(const javaScriptEnabled of [true,false]) {
     await expect(page.locator('#why-work-with-us')).toContainText('Pharmaceutical specialization');
     await expect(page.locator('#contact')).toContainText('Copy Email Address');
     await expect(page.locator('footer').getByRole('link',{name:'NMAX'})).toHaveAttribute('target','_blank');
-    await expect(page.locator('footer').getByRole('link',{name:/Privacy Policy/})).toBeVisible();
+    await expect(page.locator('footer').getByRole('link',{name:/Privacy Policy|Terms & Conditions/})).toHaveCount(0);
     await context.close();
   });
 }

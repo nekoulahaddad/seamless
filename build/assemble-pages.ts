@@ -7,7 +7,7 @@ import { renderPrivacy } from '../src/pages/privacy/render-privacy';
 import { renderTerms } from '../src/pages/terms/render-terms';
 import { renderDisclosures } from '../src/features/contact/render-legal-disclosure';
 import { cinematicSections, renderCinematicHome } from '../src/pages/home/render-cinematic-home';
-import { footerLinks, previewAlias } from './cinematic-config';
+import { previewAlias } from './cinematic-config';
 import { renderShell } from '../src/shared/render/page-shell';
 import { validateServices } from './service-schema';
 import { loadSite } from './site-input';
@@ -36,7 +36,6 @@ export function assemblePages(root: string, isRelease: boolean, env:NodeJS.Proce
   const pages = launchRoutes(profile.name);
   const alias=isRelease?input.alias:previewAlias(env);
   const encodedAlias=alias?encodeAlias(alias):undefined;
-  const footer=footerLinks(env,true);
   for (const page of pages) {
     const disclosure = renderDisclosures(page.path,entries);
     const isHome = page.id === 'home';
@@ -45,7 +44,7 @@ export function assemblePages(root: string, isRelease: boolean, env:NodeJS.Proce
     const path = resolve(root,outputFor(page.path));
     mkdirSync(dirname(path),{recursive:true});
     const html=isHome
-      ? renderCinematicHome({head,encodedAlias,disclosure,services,footer,entry:'../src/features/cinematic/main.ts'})
+      ? renderCinematicHome({head,encodedAlias,disclosure,services,entry:'../src/features/cinematic/main.ts'})
       : renderLegalPage(page,profile,head,disclosure);
     writeFileSync(path,html);
   }

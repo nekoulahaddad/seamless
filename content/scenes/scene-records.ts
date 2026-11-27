@@ -20,7 +20,7 @@ const treatments={
 const timeline={desktop:'inline:timeline',mobile:'inline:timeline',width:1200,height:600,rights:svgRights};
 const artwork:Partial<Record<SceneId,typeof timeline>>={
   hero:{desktop:'/art/hero.webp',mobile:'/art/hero-mobile.webp',width:1672,height:941,rights:photoRights},
-  about:{desktop:'/art/expert.webp',mobile:'/art/expert-mobile.webp',width:1672,height:941,rights:photoRights},
+  about:{desktop:'/art/about-scientist.webp',mobile:'/art/about-scientist-mobile.webp',width:1671,height:941,rights:'User-supplied portrait with a localized capsule removal'},
   expertise:{...timeline,desktop:'inline:expertise',mobile:'inline:expertise'},
   markets:{desktop:'/art/regional-wide.webp',mobile:'/art/regional-compact.webp',width:3840,height:1860,
     rights:'Natural Earth geographic data and NASA Blue Marble terrain and Black Marble night imagery'},

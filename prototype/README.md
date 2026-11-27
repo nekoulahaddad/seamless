@@ -18,11 +18,11 @@ Open http://127.0.0.1:4181/. To run the review archive, extract it and serve its
 
 The preview uses no demonstration address. Set `SEAMLESS_CONTACT_ALIAS` in the repository-root `.env.local` or the build environment to the confirmed company address before building. The setting is loaded by the prototype build. The Email Us and Copy Email Address controls reconstruct it on activation. The address can be recovered by a determined scraper. With the alias missing, the controls are disabled without a persistent message.
 
-The build displays links to existing approved PDFs only. See [footer document setup](legal/README.md). The approved Privacy Policy and Terms & Conditions PDFs are outstanding publication inputs.
+The footer shows the company identity and NMAX credit. Privacy and Terms remain standalone routes in the main application.
 
 ## Visual and geographic sources
 
-The supplied reference layouts determine the responsive compositions. The approved hero and expert photographs remain. The closing ImageGen still reprises the vial with an Earth horizon. The phone crop emphasizes the horizon.
+The supplied reference layouts determine the responsive compositions. The approved hero remains. About uses the supplied scientist photograph with the small capsule removed for the live animation. Why Work With Us uses a stationary vial with six SVG objects on a gold orbit. The closing ImageGen still reprises the vial with an Earth horizon. The phone crop emphasizes the horizon.
 
 The shared SVG tracks the five Approach stages horizontally on desktop and vertically on mobile. Regional Connectivity displays one static image using [Natural Earth boundaries](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/) and [populated places](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-populated-places/), NASA [Blue Marble terrain](https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography/) and [Black Marble night lights](https://science.nasa.gov/earth/earth-observatory/earth-at-night/maps/). Natural Earth supplies de facto boundaries. The gold curves are illustrative. The 3,840 px master and dedicated compact WebP use a navy feather to blend into the page. The generation tools run offline with PyShp, Shapely, NumPy and Pillow, using imagery downloaded once from the cited sources.
 

@@ -1,6 +1,8 @@
 import './styles.css';
 import { activateClosingContact } from './contact-actions';
 import { activateMobileMenu } from './mobile-menu';
+import { activateOrbit } from './orbit/play-orbit';
+import { registerAboutArtwork } from './scroll/about-registration';
 
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 let dispose:(()=>void)|undefined;
@@ -28,3 +30,6 @@ void syncMotionPreference();
 activateClosingContact();
 
 activateMobileMenu();
+
+activateOrbit();
+registerAboutArtwork();

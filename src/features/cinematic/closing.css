@@ -7,7 +7,6 @@
 .contact-actions{display:flex;gap:clamp(1.25rem,4vw,3.6rem);flex-wrap:wrap}
 .contact-action{display:flex;align-items:center;gap:.9rem;background:transparent;border:0;padding:0;color:var(--copy);cursor:pointer;font-size:1rem;text-decoration:none}
 .contact-icon{display:grid;place-items:center;border:1px solid #f6ce88;border-radius:50%;width:clamp(2.8rem,5vw,4rem);aspect-ratio:1;color:#ffd48a;background:#111f2859;box-shadow:0 0 .9rem #e4ae5038}
-.contact-icon svg,.footer-document svg{width:48%;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 .contact-icon svg{grid-area:1/1}
 .contact-check{visibility:hidden}
 [data-copied] .contact-icon svg:not(.contact-check){visibility:hidden}
@@ -25,17 +24,6 @@
 .contact-copy-selection{position:fixed;inset:0 auto auto 0;width:1px;height:1px;opacity:0;pointer-events:none}
 .contact-copy .disclosures{margin-top:1rem;color:var(--muted);font-size:.875rem;overflow-wrap:anywhere}
 .contact-status{min-height:1.5em;font-size:.83rem;margin:.8rem 0 0;color:var(--muted)}
-.cinematic-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem 2rem;padding:1.45rem 0;margin:0 var(--gutter);border-top:1px solid #78929c66;color:#c0cdd5}
-.footer-brand{display:flex;gap:.6rem;align-items:center;text-decoration:none;color:#f0f5f8;text-transform:uppercase;font-size:.76rem;letter-spacing:.12em;max-width:15rem}
-.footer-brand svg{width:3.2rem;fill:none;stroke:#d5a762;stroke-width:2;flex:none}
-.footer-document{display:inline-flex;gap:.6rem;align-items:center;font-size:.86rem;text-underline-offset:.2em;padding:.5rem 0 .5rem 1.2rem;border-left:1px solid #485d66}
-.footer-document svg{color:var(--gold);width:1.15rem}
-.footer-signoff{display:flex;align-items:center;gap:.65rem 1.2rem;justify-content:flex-end}
-.footer-signoff small{font-size:.78rem}
-.credit-heart,.dev-credit a{color:var(--gold)}
-.dev-credit{white-space:nowrap;color:#a7bbc5}
-.dev-credit a{text-decoration:underline;text-decoration-color:#b3915c;text-underline-offset:.18em}
-.dev-credit a:is(:hover,:focus-visible){text-decoration:underline;color:#ffe0a6}
 @media(max-width:900px){
  .contact-chapter{display:block;min-height:0}
  .contact-copy{padding:3.8rem 0 clamp(10rem,43vw,19rem)}
@@ -46,9 +34,4 @@
  .contact-actions{gap:1.35rem}
  .contact-action{flex-direction:column;gap:.45rem;font-size:.83rem;min-width:7.2rem}
  .contact-icon{width:3rem}
- .cinematic-footer{display:grid;justify-content:stretch;gap:0}
- .footer-brand,.footer-document,.footer-signoff{padding:.85rem 0}
- .footer-brand{max-width:none}
- .footer-document,.footer-signoff{border:none;border-top:1px solid #485d66}
- .footer-signoff{display:grid;justify-content:start;gap:.55rem}
 }

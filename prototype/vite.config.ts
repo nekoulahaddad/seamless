@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { renderMetadata } from '../build/render-metadata';
 import { previewAssets } from '../build/preview-assets';
-import { cinematicEnv, footerLinks, previewAlias } from '../build/cinematic-config';
+import { cinematicEnv, previewAlias } from '../build/cinematic-config';
 import { encodeAlias } from '../build/protected-contact';
 import { validateServices } from '../build/service-schema';
 import { fixtureProfile } from '../content/site-fixture';
@@ -21,7 +21,7 @@ export default defineConfig(({mode})=>{
       name:'seamless-cinematic-preview',
       transformIndexHtml:{order:'pre',handler:()=>renderCinematicHome({
         head,entry:'../src/features/cinematic/main.ts',encodedAlias:alias?encodeAlias(alias):undefined,
-        disclosure:'',services:validateServices(serviceCatalog),footer:footerLinks(env,false),
+        disclosure:'',services:validateServices(serviceCatalog),
       })},
     }],
   };

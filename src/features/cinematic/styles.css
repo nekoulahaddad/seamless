@@ -1,6 +1,8 @@
 @import "./visuals.css";
 @import "./branches.css";
 @import "./chapters.css";
+@import "./advantages.css";
+@import "../../shared/styles/footer.css";
 @import "./timeline.css";
 @import "./region.css";
 @import "./closing.css";

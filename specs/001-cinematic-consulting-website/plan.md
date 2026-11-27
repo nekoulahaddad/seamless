@@ -147,3 +147,7 @@ Use the existing standalone Vite build. Keep one shared reversible SVG path, wit
 ## Static Regional Connectivity and mobile corrections
 
 The approved Regional Connectivity implementation serves responsive, offline-composited WebPs from a 3,840 px master. Natural Earth boundaries and places share an orthographic projection with the NASA images, and the baked navy feather matches the surrounding section background. The global SVG journey stays independent of the image. Remove the prototype map runtime. Use the existing single email alias build input for both native contact actions. The About media query sets the sticky shot to a full-width non-growing column flow and preserves the source aspect ratio.
+
+## Final visual refinements
+
+Use a localized capsule edit composited into the supplied scientist photograph and precompute responsive crops. Derive the existing capsule and scanner positions from the pinch coordinates and displayed image geometry on resize. Render the advantage cards and visually separate the fixed vignette, vial and six SVG objects. One visibility-scoped animation loop drives phase, foreground ordering and perspective scaling. Share a compact footer across routes and retain legal pages at their existing URLs.

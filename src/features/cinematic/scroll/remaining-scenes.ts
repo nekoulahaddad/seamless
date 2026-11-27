@@ -1,15 +1,13 @@
 import { progress } from './measure';
 
 export function trackRemaining(main:HTMLElement) {
-  const editorial=main.querySelector<HTMLElement>('#why-work-with-us');
   const contact=main.querySelector<HTMLElement>('#contact');
-  const elements=[editorial,contact];
+  const elements=[contact];
   let bounds=elements.map(measureScene);
   return {
     refresh:()=>{bounds=elements.map(measureScene);},
     paint:(scroll:number)=>{
-      const [why,finale]=bounds;
-      if(why) why.element.style.setProperty('--editorial-progress',String(sceneProgress(why,scroll)));
+      const [finale]=bounds;
       if(finale) finale.element.style.setProperty('--zoom',String(1+sceneProgress(finale,scroll)*.065));
     },
     dispose:()=>{

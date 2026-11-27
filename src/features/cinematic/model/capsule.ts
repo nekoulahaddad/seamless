@@ -27,7 +27,7 @@ function createCapsule(): SVGSVGElement {
 
 function project(pose:CapsulePose,height:number,width:number) {
   const tilt=.26+pose.lift*.58;
-  const roll=-.14-pose.lift*.46;
+  const roll=-pose.lift*.6;
   const x=-Math.cos(pose.turn)*Math.sin(roll);
   const y=Math.cos(tilt)*Math.cos(roll)-Math.sin(tilt)*Math.sin(pose.turn)*Math.sin(roll);
   const factor=height/(2*Math.tan(camera.fov/2)*camera.distance);

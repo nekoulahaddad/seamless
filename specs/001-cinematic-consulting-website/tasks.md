@@ -220,3 +220,10 @@ T055 precedes T056?T058. T059 follows all three. T054 was completed after owner 
 - [X] T063 Correct the mobile About shot layout and verify full-width art, source proportions, text padding, scan alignment and no overflow at 360, 390 and 430 px (PA-11).
 
 T062 follows T060, T061 and T063. See the [static regional, contact and mobile About validation](validation/static-connectivity-contact-about.md). T054 was completed after owner approval.
+
+## Final visual refinements
+
+- [ ] T064 Replace the supplier photograph with the responsive scientist composition and register the existing capsule to the fingertips (PA-13).
+- [ ] T065 Render seven responsive advantage cards and six objects around a stationary vial with visibility and motion preferences respected (PA-14?15).
+- [ ] T066 Remove footer legal links and unused PDF configuration while preserving the footer credit and standalone legal pages (PA-09).
+- [ ] T067 Validate responsive layout, scroll reversal, depth, motion preferences and bundle performance. Capture reference-width desktop and mobile evidence (PA-13?15).
