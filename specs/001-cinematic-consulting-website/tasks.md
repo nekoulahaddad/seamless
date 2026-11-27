@@ -200,3 +200,23 @@ Serialize any tasks that touch the same homepage, navigation, or page assembly f
 1. **Discovery MVP**: After approval, implement Setup, Foundation and US1. Use synthetic inputs and verify the static discovery path independently. The MVP is an internal demo increment.
 2. **Incremental delivery**: Add US2 for direct email, US3 for the narrative and US4 for responsive and accessible motion. Add US5 and US6 for complete market discovery and publication controls. Verify each increment against its independent test.
 3. **Production readiness**: Complete the polish phase, final visual asset and publication checks, applicable UK disclosures, and contact alias approval. Keep optional analytics and edge controls disabled unless separately approved. The checklist does not authorize implementation or deployment.
+
+## Standalone Final Visual Redesign
+
+- [X] T055 Document the superseding prototype layout, geography, contact behaviour and footer acceptance (PA-06?10).
+- [X] T056 Implement the five-stage responsive timeline and connect its stage anchors to the reversible shared path (PA-06).
+- [X] T057 Replace the duplicated markets with one geographically sourced interactive regional scene (PA-07).
+- [X] T058 Implement the closing Contact, two protected actions and configurable PDF footer (PA-08?09).
+- [X] T059 Verify six viewport widths, interactions, accessibility and performance, and package new visual evidence (PA-10).
+
+T055 precedes T056?T058. T059 follows all three. T054 remains subject to final integration approval.
+
+## Static regional artwork and Contact controls
+
+- [X] T060 Replace map-specific behaviour with one verified static WebP scene and seamless responsive blending (PA-07). Supersedes the interactive deliverables in T035 and T057.
+- [X] T061 Restore the configured mailto and clipboard actions across the full controls, remove the permanent status, and verify two-second success and temporary failure feedback (PA-08).
+- [X] T062 Revalidate the updated standalone build at all reference widths and package visual, browser and performance evidence (PA-07?10).
+
+- [X] T063 Correct the mobile About shot layout and verify full-width art, source proportions, text padding, scan alignment and no overflow at 360, 390 and 430 px (PA-11).
+
+T062 follows T060, T061 and T063. See the [static regional, contact and mobile About validation](validation/static-connectivity-contact-about.md). T054 still requires final integration approval.

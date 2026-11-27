@@ -2,7 +2,7 @@
 
 ## Protected contact
 
-The initial HTML provides a Contact destination and instructions. Each protected control has an
+The initial HTML provides a Contact destination and the two action labels. Each protected control has an
 accessible name and can be activated by keyboard, pointer or touch. Leave the full address out
 of pre-interaction HTML, scripts, metadata, structured data, configuration, maps and downloaded
 artifacts, except at narrowly scoped approved locations where publication is legally required. Make those
@@ -12,11 +12,10 @@ plain configuration in source maps.
 | Action or condition | Result |
 | --- | --- |
 | Email Us | Reconstruct the verified address on activation and call standard `mailto` with the matching recipient. Keep the handoff in the user gesture. The email app owns composition and sending. |
-| Reveal Email Address | Reveal one selectable, readable address and expose its availability to assistive technology while keeping focus predictable. |
-| Copy Email Address | Attempt clipboard write on activation. Announce success only after it resolves. If unavailable or denied, reveal selectable text and provide manual-copy instructions. |
-| No handler | Reveal and copy still function. Never claim a draft opened or a message was sent. |
-| Scripts missing | Contact remains reachable and contains readable instructions. The protected actions require scripts. Make approved mandatory disclosures available without scripts or interaction. |
-| Motion, map or media fails | Contact controls remain functional independently of the cinematic code. |
+| Copy Email Address | Attempt clipboard write on activation. Show a brief checkmark on the copy control and announce the successful write to assistive technology. Provide temporary feedback when the clipboard is unavailable or denied. |
+| No handler | Copy operates independently of the OS mail handler. Never claim a draft opened or a message was sent. |
+| Scripts missing | Contact remains reachable with readable context. The protected actions require scripts. Make approved mandatory disclosures available without scripts or interaction. |
+| Motion or media fails | Contact controls remain functional independently of the cinematic code. |
 
 Activation sends no site request, records no data and adds no analytics. Test the actual
 OS handoff on approved representative devices. Client-side concealment does not stop a
@@ -51,7 +50,7 @@ gate and obtain the company's decision.
 Why Work With Us uses a restrained scroll reveal only in eligible motion modes. Keep its
 copy readable in initial HTML and visible with reduced motion, unavailable assets, or scripts off.
 
-The hero, network map, Expertise, five Approach stages, Our Markets and closing scene each own
+The hero, Expertise, five Approach stages and closing scene each own
 their scene range, required visual variants and readiness. Initialize motion only when
 preferences and prerequisites allow, after static content is usable. Keep nearby assets only
 and prefetch at bounded approach points. Scroll position is the input for both directions.
@@ -63,3 +62,5 @@ pins, observers and listeners that are no longer applicable. Resizing and prefer
 must preserve focus, the current reading section and anchor access. Keep the document order
 independent of visual layering and ensure sticky navigation does not obscure focus. Programmatic
 enhancement may never trap the scroll. No prerecorded video or frame sequences.
+
+Regional Connectivity uses one static responsive asset and a semantic legend. The shared path is the only scroll-synchronized effect in that section.

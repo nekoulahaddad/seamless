@@ -22,10 +22,13 @@
 .scan-beam{top:38%;block-size:.17rem;background:linear-gradient(90deg,transparent,#c1fcff,transparent);box-shadow:0 0 15px #4ac2ef99}
 @media(max-width:900px){
  .hero-shot,.about-shot{display:flex;flex-direction:column;align-items:stretch;justify-content:start}
+ .shot.about-shot{display:flex;align-items:stretch;justify-content:flex-start;inline-size:100%}
  .hero-art,.expert-art{position:relative;inset:auto;order:2;z-index:0;block-size:clamp(15rem,65vw,27rem);margin-block-start:1rem}
  .hero-art:after,.expert-art:after{background:linear-gradient(180deg,#061623 0%,transparent 15% 83%,#061623 100%);z-index:3}
  .hero-art img{object-position:center 51%}
  .vial-light{inset-inline-start:38%;inline-size:23%}
+ .about-shot .expert-art{inline-size:100%;block-size:auto;aspect-ratio:820 / 630;flex:none;margin-block-start:.75rem}
+ .expert-art picture{display:block;width:100%;height:100%}
  .expert-still{object-position:65% 50%}
  .capsule-mount{inset:7% 3% 7% 33%}
  .capsule-fallback{left:69%;top:51%}

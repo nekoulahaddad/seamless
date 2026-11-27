@@ -75,3 +75,9 @@ cannot establish. Lighthouse TBT is a lab responsiveness diagnostic. Field INP a
 **Alternatives considered**: Loading all visuals upfront costs transfer and decoded memory.
 Emulation only misses physical-device and assistive-technology behavior. Keep field telemetry
 off unless explicitly approved and use public field data where available.
+
+## Standalone prototype redesign
+
+- Country geometry comes from Natural Earth Admin 0, 1:50m, and the Dubai location comes from Natural Earth Populated Places. A cropped, simplified vector preserves geographic correspondence between targets, labels and route endpoints. Natural Earth depicts de facto boundaries. Conceptual curves communicate geography without asserting shipping services or actual pairings.
+- The Approach path uses the existing scroll engine and shared SVG. Layout-derived anchors keep artwork aligned in both responsive compositions, using no new animation runtime.
+- Prototype contact drops manual reveal at the owner?s instruction. Alias and local PDF support are opt-in build inputs. Missing inputs render no fake address or dead document links. Native platform mail handling and publication approvals remain separate.

@@ -1,11 +1,12 @@
+import { verifyConfiguredContact } from './review-contact.mjs';
 import { reviewReducedMotion, reviewResponsive, reviewWithoutScripts } from './review-responsive.mjs';
-import { verifyAxe, verifyContent, verifyLater, verifyMarkets } from './review-chapters.mjs';
+import { verifyAxe, verifyContent, verifyLater } from './review-chapters.mjs';
 import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
 import { verifyVial } from './review-vial.mjs';
 import { chromium } from 'playwright';
 
-const output = new URL('../.generated/prototype-review/',import.meta.url);
+const output = new URL('../.generated/static-journey/',import.meta.url);
 const origin = process.env.SEAMLESS_PROTO_URL ?? 'http://127.0.0.1:4181/';
 const desktop={width:1440,height:900};
 
@@ -47,7 +48,7 @@ async function frameSample(page) {
 }
 
 async function reviewHero(page) {
-  assert.equal(await page.locator('.site-header button').count(),0);
+  assert.equal(await page.locator('.site-header button:visible').count(),0);
   const path=page.locator('.journey-path');
   assert.equal(await path.getAttribute('data-lit-nodes'),'0');
   assert.equal(await path.getAttribute('data-visible-length'),'0');
@@ -112,13 +113,13 @@ try {
   await reviewAbout(page);
   await reviewBranches(page);
   await verifyLater(page,snapshot,'07-desktop');
-  await verifyMarkets(page);
   await verifyAxe(page);
   await reviewResponsive(browser,{ready,seek,snapshot});
   await reviewReducedMotion(browser,{origin,desktop});
   await reviewWithoutScripts(browser,{origin,desktop});
+  await verifyConfiguredContact(browser,origin);
   assert.deepEqual(errors,[]);
-  console.log(JSON.stringify({frameP95Ms:frameP95,renderer:'Headless Chromium',desktop,views:22},null,2));
+  console.log(JSON.stringify({frameP95Ms:frameP95,renderer:'Headless Chromium',desktop,views:14},null,2));
 } finally {
   await browser.close();
 }

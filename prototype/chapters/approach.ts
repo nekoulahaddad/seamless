@@ -1,18 +1,18 @@
 import { stages } from '../../content/scenes/stages';
 import { escapeHtml as esc } from '../../src/shared/render/escape-html';
-import { picture } from './art';
 
-export function renderApproach(): string {
-  const steps=stages.map(({id,name,title,copy})=>`<li id="stage-${id}" data-stage>
-    <p class="eyebrow">${esc(name)}</p><h3>${esc(title)}</h3><p>${esc(copy)}</p></li>`).join('');
-  const links=stages.map(({id,name})=>`<a href="#stage-${id}">${esc(name)}</a>`).join('');
+export function renderApproach():string {
+  const steps=stages.map(({id,name,copy},index)=>`<li id="stage-${id}" data-stage>
+    <span class="stage-number" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>
+    <h3>${esc(name)}</h3><p>${esc(copy)}</p><span data-stage-anchor aria-hidden="true"></span>
+  </li>`).join('');
   return `<section id="approach" class="chapter approach-chapter" aria-labelledby="approach-title">
-    <div class="chapter-grid">
-      <div class="approach-visual">
-        <h2 id="approach-title" data-journey-point>Our Approach</h2>
-        ${picture('approach')}
-        <nav class="stage-rail" aria-label="Approach stages">${links}</nav>
-      </div>
+    <div class="timeline-inner">
+      <p class="scene-label">Market entry</p>
+      <h2 id="approach-title">Our Approach</h2>
+      <p class="description">A focused path from opportunity to market access.</p>
       <ol class="stage-list">${steps}</ol>
-    </div></section>`;
+    </div>
+    <div class="timeline-waves" aria-hidden="true"></div>
+  </section>`;
 }

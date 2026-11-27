@@ -9,8 +9,8 @@
 ## Summary
 
 Ship a static English corporate site with a continuous “From Molecule to Market” narrative,
-interactive market discovery, and protected email contact. Prebuild semantic HTML for the homepage
-and two legal pages. Enhance it with independent TypeScript features for navigation, map,
+static regional discovery, and protected email contact. Prebuild semantic HTML for the homepage
+and two legal pages. Enhance it with independent TypeScript features for navigation,
 email controls, and programmatic motion. The public deployment consists of static files.
 
 ## Technical Context
@@ -20,7 +20,7 @@ email controls, and programmatic motion. The public deployment consists of stati
 | Language | HTML5, CSS, strict TypeScript. Target modern evergreen browsers. Use ES modules and feature detection for optional capabilities. |
 | Build | npm, current supported Node LTS compatible with the pinned Vite release, lockfile, and Vite multi-page build. Generate static HTML and validate content at build time. Pin and document exact package and Node versions when initializing the build. |
 | Dependencies | TypeScript and Vite for tooling, Zod for external content validation at build time, GSAP and ScrollTrigger only in the motion chunk for scroll-linked pinning and timelines. CSS and SVG for the rest. |
-| Storage | Source-controlled content and assets. Contact has transient page state only. No website storage for inquiries or address reveal state. |
+| Storage | Source-controlled content and assets. Contact has transient page state only. No website storage for inquiries or contact feedback state. |
 | Testing | Automated build checks and Vitest for behaviour that can be tested without a browser. Playwright and axe for browser checks. Manual device, screen reader, motion, mail app, and visual checks. Lighthouse and DevTools traces for performance. |
 | Platform | HTTPS static host. Chromium, Firefox and WebKit browser checks. Physical phone and tablet checks for touch, motion and native email handoff. |
 | Scope | Homepage and Privacy Policy and Terms pages. Six services, five target countries, five approach stages, and two regional network locations. Optional verified material ships only when approved. |
@@ -37,7 +37,7 @@ email controls, and programmatic motion. The public deployment consists of stati
 | VI and XI. Accessibility and progressive enhancement | Pass. Static HTML is the starting point. | Contact discovery, instructions and any mandatory contact disclosure are script-independent. Interactive address reconstruction requires scripts per FR-014. Motion scripts are separate and optional. |
 | VII. Maintainability | Pass. No app runtime framework is needed for current scope. | Feature composition, strict typed boundaries, immutable data, separate CSS, and the 150-line file and 30-line function limits apply. The design has no React components or shared application state. |
 | VIII. Credibility | Pass. Claims require evidence and permission. | Build validation separates publication metadata from public output. Unsupported optional content and its links are omitted. |
-| IX and X. Security, privacy and quality | Pass for protected static contact. | Verify mailto, reveal, copy fallback and plaintext exposure against the security and accessibility contracts. Contact sends no site requests or telemetry. Verify approved privacy practices and applicable UK disclosures before release. |
+| IX and X. Security, privacy and quality | Pass for protected static contact. | Verify mailto, clipboard feedback and plaintext exposure against the security and accessibility contracts. Contact sends no site requests or telemetry. Verify approved privacy practices and applicable UK disclosures before release. |
 
 The v2.0.0 amendment aligns the constitution with the static design. The recorded implementation approval applies to local development. Release evidence remains required.
 
@@ -85,8 +85,7 @@ Build tooling, tests, original asset files, and editorial evidence are outside p
 
 1. Establish content validation, approved static page rendering, asset manifests, and source audits.
 2. Add navigation, approved market profiles, and the protected contact surface independently of motion.
-3. Add and mount scene orchestration for Hero, Global Market Connections, Expertise, Our Approach,
-   Our Markets and Final Cinematic Scene. Add the restrained Why Work With Us reveal. Keep text in
+3. Add scene orchestration for Hero, Expertise, Our Approach and the closing scene. Integrate the static Regional Connectivity artwork. Add the restrained Why Work With Us reveal. Keep text in
    normal DOM order. Pin only visual compositions. Test the whole homepage order with scripts on and off.
 4. Measure and iterate on final visuals, device modes and fallbacks. Apply the
    [quickstart validation guide](quickstart.md) to the built and staged site.
@@ -114,8 +113,7 @@ other supported engines separately for functionality and capture trace timing wh
 
 Run five cold and five warm journeys per device. Clear the cache for each cold run and reuse
 warmed static assets for warm runs. In each journey, use native taps, clicks and keys to open
-navigation, follow an anchor, select a country and activate reveal and copy. Include keyboard
-activation where supported and select a country while nearby motion assets are being initialized.
+navigation, follow an anchor, reach Regional Connectivity and activate Copy Email Address. Include keyboard activation where supported and follow the consultation anchor while motion assets are being initialized.
 Capture input-to-next-paint from Event Timing or the DevTools interaction trace, grouping events
 by interaction ID and using the longest duration for the interaction. Record a local journey
 INP using the browser's DevTools live metric or equivalent local-only collection. Measure the
@@ -141,3 +139,11 @@ Default to disabled analytics. Confirm any analytics and hosting decisions befor
 No constitution exceptions. GSAP/ScrollTrigger is bounded to the motion enhancement and must fit
 the JavaScript budget. The build should accept the simpler layered composition whenever a visual
 prototype meets the scene goal. Revisit dependency selection only if measured evidence warrants it.
+
+## Prototype redesign decision
+
+Use the existing standalone Vite build. Keep one shared reversible SVG path, with a horizontal series of measured stage anchors on desktop and a vertical series on mobile. Use local, build-time projected Natural Earth vectors and native controls for map selection. Routes are conceptual overlays. Composite a responsive photographic closing still with live HTML controls, and blend the shared path into a gold finish. Read the approved alias and PDF filenames from build configuration. Keep this work separate from the production homepage and its legal publication process.
+
+## Static Regional Connectivity and mobile corrections
+
+The approved Regional Connectivity implementation serves responsive, offline-composited WebPs from a 3,840 px master. Natural Earth boundaries and places share an orthographic projection with the NASA images, and the baked navy feather matches the surrounding section background. The global SVG journey stays independent of the image. Remove the prototype map runtime. Use the existing single email alias build input for both native contact actions. The About media query sets the sticky shot to a full-width non-growing column flow and preserves the source aspect ratio.

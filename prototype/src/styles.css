@@ -1,6 +1,10 @@
 @import "./visuals.css";
 @import "./branches.css";
 @import "./chapters.css";
+@import "./timeline.css";
+@import "./region.css";
+@import "./closing.css";
+@import "./mobile-menu.css";
 :root{color-scheme:dark;--navy:#061623;--gold:#e4bd7f;--aqua:#83ecff;--copy:#eef4fa;--muted:#c7d4e4;--gutter:clamp(1.25rem,9vw,9rem);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--navy);color:var(--copy)}
 *{box-sizing:border-box}
 body{margin:0}
@@ -24,6 +28,9 @@ button{font:inherit}
  .mobile-menu summary{cursor:pointer;min-block-size:2.5rem;padding:.55rem 0;font-weight:600}
  .mobile-menu nav{position:absolute;inset:100% 0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:#071a27;border-bottom:1px solid #60838e;padding:1rem var(--gutter);box-shadow:0 1rem 2rem #0616239e}
  .mobile-menu nav a{min-block-size:2.3rem;padding:.4rem 0}
+ .mobile-menu .menu-icon,.mobile-menu .menu-chevron{display:none}
+ .mobile-menu .menu-link{display:flex}
+ .mobile-menu .menu-consult{grid-column:1/-1;width:100%;margin:auto}
 }
 @media(max-width:480px){
  .site-header .header-contact{font-size:.73rem;padding-inline:.55rem;min-block-size:2.5rem}
@@ -52,14 +59,14 @@ p{line-height:1.57}
 .journey-path path{fill:none;vector-effect:non-scaling-stroke}
 .path-bed{stroke:#6f9db0;stroke-width:1;opacity:.34}
 .path-light,.path-halo{stroke:#a4f5ff;stroke-linecap:round;stroke-width:1.65;visibility:hidden}
-.path-halo{stroke:#53d9fc;stroke-width:4;opacity:.36;filter:blur(3px)}
+.path-light,.path-halo{stroke:url(#journey-finish)}
+.path-halo{stroke-width:4;opacity:.36;filter:blur(3px)}
 .path-flare{fill:#e1fbff;filter:drop-shadow(0 0 8px #63e5ff);visibility:hidden}
 .path-nodes circle{fill:#122d40;stroke:#5b8299;stroke-width:1}
 .path-nodes .lit{fill:#d7faff;stroke:#57e1f8;filter:drop-shadow(0 0 6px #7adfff)}
 .path-nodes .current{stroke-width:2}
 .chapter-anchor{position:absolute;top:10%;left:7%;width:1px;height:1px;pointer-events:none}
 .proto-active .eyebrow{color:#fbd59b}
-.prototype-footer{padding:1.25rem var(--gutter);display:flex;justify-content:space-between;gap:1rem;border-top:1px solid #234350;color:#a9bdca;font-size:.82rem}
 [data-motion="on"] .hero{min-block-size:212svh}
 [data-motion="on"] .about{min-block-size:181svh}
 [data-motion="on"] .hero-shot,[data-motion="on"] .about-shot{position:sticky;inset-block-start:0;min-block-size:100svh}

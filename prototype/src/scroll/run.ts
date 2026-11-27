@@ -77,7 +77,7 @@ function trackGeometry({hero,about,expertise,main,svg}:JourneyNodes,paint:(scrol
     onRefresh();
     render();
   };
-  return {render,refresh,dispose:()=>branches?.(0)};
+  return {render,refresh,dispose:()=>{branches?.(0);path?.(0);}};
 }
 
 function watchLayout(main:HTMLElement):()=>void {

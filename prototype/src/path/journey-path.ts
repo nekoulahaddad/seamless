@@ -16,6 +16,7 @@ export function visibleLength(scroll:number,geometry:JourneyGeometry): number {
 export function createPath(main: HTMLElement, svg: SVGSVGElement, bounds: Chapters, compact: boolean) {
   const geometry=buildGeometry(main,bounds,main.clientWidth,compact);
   svg.setAttribute('viewBox',`0 0 ${main.clientWidth} ${main.offsetHeight}`);
+  paintFinish(svg,bounds,main.offsetHeight);
   const paths=Array.from(svg.querySelectorAll('path'));
   const [bed,...illuminated]=paths;
   for (const path of paths) path.setAttribute('d',geometry.d);
@@ -48,6 +49,25 @@ function paintPath(scroll:number,geometry:JourneyGeometry,paths:SVGPathElement[]
   }
   const active=geometry.thresholds.reduce((last,item,i)=>scroll>=item?i:last,-1);
   marks.forEach((node,i)=>{node.classList.toggle('lit',i<=active);node.classList.toggle('current',i===active);});
+  updateStages(geometry,active);
   svg.dataset.litNodes=String(active+1);
   svg.dataset.visibleLength=String(Math.round(length));
+}
+
+function paintFinish(svg:SVGSVGElement,bounds:Chapters,height:number):void {
+  const contact=bounds.destinations.find(({element})=>element.id==='contact');
+  const gradient=svg.querySelector('#journey-finish');
+  if(!contact||!gradient) return;
+  gradient.setAttribute('x1','0');
+  gradient.setAttribute('x2','0');
+  gradient.setAttribute('y1',String(contact.top-bounds.mainTop));
+  gradient.setAttribute('y2',String(height-32));
+}
+
+function updateStages({stages}:JourneyGeometry,active:number):void {
+  const last=Array.from(stages.keys()).at(-1)??0;
+  for(const [index,stage] of stages){
+    stage.classList.toggle('is-reached',index<=active);
+    stage.classList.toggle('is-current',index===Math.min(last,active));
+  }
 }

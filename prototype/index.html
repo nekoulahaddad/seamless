@@ -14,16 +14,36 @@
 <body>
 <a href="#journey" class="skip-link">Skip to content</a>
 <header class="site-header">
- <a class="brand" href="#hero" aria-label="Seamless Market Entry Advisory, beginning">
-  <svg viewBox="0 0 60 44" aria-hidden="true"><path d="M5 34C18 31 31 15 50 8C65 2 49 24 37 28M8 38C25 42 53 22 54 21C65 18 47 38 32 40" /></svg>
-  <span>Seamless<br>Market Entry<br>Advisory</span>
- </a>
+ <!-- header-brand -->
  <nav aria-label="Primary"><!-- prototype-nav --></nav>
+ <button class="mobile-menu-trigger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
  <details class="mobile-menu"><summary>Menu</summary><nav aria-label="Primary"><!-- mobile-nav --></nav></details>
  <a class="button outline header-contact" href="#contact">Book a Consultation</a>
 </header>
+<dialog id="mobile-navigation" class="mobile-panel" aria-label="Site navigation">
+ <div class="mobile-panel-inner">
+  <div class="mobile-panel-header">
+   <!-- menu-brand -->
+   <button class="mobile-menu-close" type="button" aria-label="Close menu" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button>
+  </div>
+  <svg class="mobile-panel-light mobile-panel-light-top" viewBox="0 0 400 105" preserveAspectRatio="none" aria-hidden="true">
+   <defs><linearGradient id="menu-sky"><stop offset=".28" stop-color="#59cbe6" stop-opacity="0"/><stop offset=".64" stop-color="#a0f2ff"/><stop offset="1" stop-color="#008aaa" stop-opacity=".08"/></linearGradient><filter id="menu-sky-glow"><feGaussianBlur stdDeviation="3.5"/></filter></defs>
+   <path d="M0 29Q225-30 400 95" fill="none" stroke="url(#menu-sky)" stroke-width="6" opacity=".75" filter="url(#menu-sky-glow)"/>
+   <path d="M0 29Q225-30 400 95" fill="none" stroke="url(#menu-sky)" stroke-width="1"/>
+  </svg>
+  <div class="mobile-panel-navigation"></div>
+  <svg class="mobile-panel-light mobile-panel-light-bottom" viewBox="0 0 400 134" preserveAspectRatio="none" aria-hidden="true">
+   <defs><linearGradient id="menu-amber"><stop stop-color="#aa6e31" stop-opacity=".17"/><stop offset=".4" stop-color="#ffeab6"/><stop offset=".85" stop-color="#ffca72" stop-opacity="0"/></linearGradient><linearGradient id="menu-cyan"><stop offset=".3" stop-color="#56c8dc" stop-opacity="0"/><stop offset=".67" stop-color="#9bfaff"/><stop offset="1" stop-color="#1392b4" stop-opacity=".45"/></linearGradient><filter id="menu-low-glow"><feGaussianBlur stdDeviation="5"/></filter></defs>
+   <g fill="none" stroke-width="7" opacity=".85" filter="url(#menu-low-glow)"><path d="M-8 110Q177 14 407 93" stroke="url(#menu-amber)"/><path d="M90 102Q243 28 400 5" stroke="url(#menu-cyan)"/></g>
+   <g fill="none" stroke-width="1.1"><path d="M-8 110Q177 14 407 93" stroke="url(#menu-amber)"/><path d="M90 102Q243 28 400 5" stroke="url(#menu-cyan)"/></g>
+  </svg>
+ </div>
+</dialog>
 <main id="journey">
  <svg class="journey-path" aria-hidden="true">
+  <defs><linearGradient id="journey-finish" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#a4f5ff"/><stop offset=".58" stop-color="#ffe2ab"/><stop offset="1" stop-color="#ffd28a"/>
+  </linearGradient></defs>
   <path class="path-bed" /><path class="path-halo" /><path class="path-light" />
   <g class="path-nodes"></g><circle class="path-flare" r="5" />
  </svg>
@@ -44,7 +64,6 @@
    </div>
   </div>
  </section>
- <!-- connections -->
  <section id="about" class="chapter about" aria-labelledby="about-title">
   <div class="shot about-shot">
    <div class="expert-art" aria-hidden="true">
@@ -78,7 +97,6 @@
  </section>
  <!-- remaining-chapters -->
 </main>
-<footer class="prototype-footer">Seamless Market Entry Advisory <span>Visual prototype</span></footer>
-<!-- preview-policies -->
+<!-- cinematic-footer -->
 </body>
 </html>

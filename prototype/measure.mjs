@@ -39,7 +39,7 @@ function observeMetrics(){
 
 async function sample(page) {
   return page.evaluate(async()=>{
-    const targets=['hero','about','expertise','approach','markets','why-work-with-us','partners','finale'];
+    const targets=['hero','about','expertise','approach','markets','why-work-with-us','contact'];
     const frames=[];
     for(const name of targets){
       const item=document.getElementById(name);
@@ -59,10 +59,13 @@ async function sample(page) {
 }
 
 async function interact(page) {
-  await page.locator('#market-syria summary').press('Enter');
-  await page.locator('#market-yemen summary').click();
-  await page.locator('#finale .button').click();
-  await page.getByRole('button',{name:'Reveal Email Address'}).press('Enter');
+  await page.locator('.hero-copy a[href="#about"]').press('Enter');
+  await page.locator('.about-copy a[href="#expertise"]').press('Enter');
+  const menu=page.getByRole('button',{name:'Open menu'});
+  if(await menu.isVisible()){
+    await menu.click();
+    await page.getByRole('link',{name:'Book a Consultation'}).click();
+  }else await page.locator('.header-contact').press('Enter');
   await page.waitForTimeout(200);
   return page.evaluate(()=>{
     const {lcp,cls,events}=window.__prototypeMeasures;

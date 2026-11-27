@@ -1,6 +1,6 @@
 import './styles.css';
-import { activateContact } from '../../src/features/contact/contact-controls';
-import { activateMarketSelection } from './market-selection';
+import { activateClosingContact } from './contact-actions';
+import { activateMobileMenu } from './mobile-menu';
 
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 let dispose:(()=>void)|undefined;
@@ -25,10 +25,6 @@ async function syncMotionPreference():Promise<void> {
 reduced.addEventListener('change',()=>{void syncMotionPreference();});
 void syncMotionPreference();
 
-activateContact();
-activateMarketSelection();
+activateClosingContact();
 
-const menu=document.querySelector<HTMLDetailsElement>('.mobile-menu');
-menu?.addEventListener('click',(event)=>{
-  if(event.target instanceof HTMLAnchorElement) menu.open=false;
-});
+activateMobileMenu();
